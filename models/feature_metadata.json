@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-29T04:35:11.813645+00:00",
+  "total_books": 85,
+  "vocabulary_size": 3678,
+  "features": [
+    "genres",
+    "author",
+    "title",
+    "description"
+  ],
+  "matrix_shape": [
+    85,
+    85
+  ]
+}
