@@ -83,7 +83,8 @@ export default function Hero({ onSearchSubmit, onSelectBook, onSelectGenre }) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search title, author, or keyword..."
-              className="input-paper w-full pl-11 pr-24 py-3.5 text-base"
+              className="input-paper w-full text-base"
+              style={{ paddingLeft: '44px', paddingRight: '96px', paddingTop: '14px', paddingBottom: '14px' }}
             />
             {query && (
               <button
