@@ -1,19 +1,19 @@
-# 📚 Machine Learning Book Recommendation System
+# Machine Learning Book Recommendation System
 
 An end-to-end, Machine Learning–powered web application that helps users discover books tailored to their interests using **TF-IDF Feature Engineering** and **Cosine Similarity**.
 
 ---
 
-## 🌟 Features
+# Features
 
-- **🔍 Book Search**: Live instant search across catalog titles, authors, genres, and narrative keywords.
-- **📖 Book Details**: Rich metadata display including average ratings, review counts, publication year, genres, and synopses.
-- **🌟 Popular Books**: Bayesian weighted popularity ranking combining community rating and review volume.
-- **🤝 Personalized Similarity Recommendations**: Dynamic recommendations based on selected titles.
-- **📐 Cosine Similarity Engine**: Precomputed vector similarity model with sub-2ms lookup latency.
-- **🧪 Interactive ML Studio**: Seed book inspector and Top-$N$ tuning sandbox with similarity breakdown.
-- **📱 Responsive Web Interface**: Built with React, Vite, and Tailwind CSS.
-- **⚡ High-Performance REST API**: FastAPI backend with full OpenAPI / Swagger documentation and CORS support.
+- * Book Search**: Live instant search across catalog titles, authors, genres, and narrative keywords.
+- * Book Details**: Rich metadata display including average ratings, review counts, publication year, genres, and synopses.
+- * Popular Books**: Bayesian weighted popularity ranking combining community rating and review volume.
+- * Personalized Similarity Recommendations**: Dynamic recommendations based on selected titles.
+- * Cosine Similarity Engine**: Precomputed vector similarity model with sub-2ms lookup latency.
+- * Interactive ML Studio**: Seed book inspector and Top-$N$ tuning sandbox with similarity breakdown.
+- * Responsive Web Interface**: Built with React, Vite, and Tailwind CSS.
+- * High-Performance REST API**: FastAPI backend with full OpenAPI / Swagger documentation and CORS support.
 
 ---
 
@@ -29,7 +29,7 @@ Where:
 
 ---
 
-## 📁 Project Structure
+# Project Structure
 
 ```
 book-recommendation-system/
@@ -77,7 +77,7 @@ book-recommendation-system/
 
 ---
 
-## 🚀 Getting Started
+# Getting Started
 
 ### 1. Prerequisites
 - Python 3.10+
@@ -112,7 +112,7 @@ Open `http://localhost:5173` in your browser.
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 Execute the automated test suite with Pytest:
 ```bash
