@@ -1,74 +1,70 @@
 import React from 'react';
 import { BookOpen, Sparkles, Compass, Flame, Cpu } from 'lucide-react';
 
-export default function Navbar({ activeTab, setActiveTab, onOpenRandom }) {
+export default function Navbar({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'explore', label: 'Explore Catalog', icon: Compass },
     { id: 'popular', label: 'Popular & Top Rated', icon: Flame },
-    { id: 'ml-recommender', label: 'ML Recommender Studio', icon: Sparkles },
+    { id: 'ml-recommender', label: 'ML Recommender', icon: Sparkles },
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full bg-paper-50/95 backdrop-blur-sm border-b border-paper-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Brand / Logo */}
+          {/* Brand */}
           <div 
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => setActiveTab('explore')}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span className="text-xl font-bold bg-gradient-to-r from-white via-slate-100 to-indigo-200 bg-clip-text text-transparent">
+            <BookOpen className="w-6 h-6 text-accent" />
+            <div className="flex items-baseline gap-2">
+              <span className="text-xl display-font font-bold text-ink-900 tracking-tight">
                 BookWise
               </span>
-              <span className="ml-1.5 text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                ML v1.0
+              <span className="text-[10px] uppercase font-bold tracking-widest text-muted hidden sm:inline-block">
+                Curated
               </span>
             </div>
           </div>
 
-          {/* Nav Tabs */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1 rounded-xl border border-slate-800">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => {
-              const Icon = item.icon;
               const isActive = activeTab === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                  className={`flex items-center gap-1.5 pb-1 text-[13px] font-semibold transition-colors duration-150 border-b-2 ${
                     isActive
-                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                      ? 'border-accent text-ink-900'
+                      : 'border-transparent text-ink-500 hover:text-ink-800'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
                   {item.label}
                 </button>
               );
             })}
           </nav>
 
-          {/* Quick Action / Docs */}
+          {/* Action */}
           <div className="flex items-center gap-3">
             <a
               href="http://127.0.0.1:5000/docs"
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/60 rounded-lg transition-colors"
+              className="hidden sm:flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-ink-600 hover:text-ink-900 transition-colors"
             >
-              <Cpu className="w-3.5 h-3.5 text-indigo-400" />
-              API Docs
+              <Cpu className="w-3.5 h-3.5" />
+              API
             </a>
           </div>
         </div>
       </div>
 
-      {/* Mobile navigation bar */}
-      <div className="md:hidden flex items-center justify-around border-t border-slate-800/60 bg-slate-950 px-2 py-2">
+      {/* Mobile Nav */}
+      <div className="md:hidden flex items-center justify-around border-t border-paper-200 bg-paper-50 px-2 py-3">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -76,8 +72,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenRandom }) {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`flex flex-col items-center gap-1 px-3 py-1 text-xs font-medium rounded-lg ${
-                isActive ? 'text-indigo-400 font-semibold' : 'text-slate-400 hover:text-slate-200'
+              className={`flex flex-col items-center gap-1 px-3 text-[11px] font-bold uppercase tracking-wider ${
+                isActive ? 'text-accent' : 'text-ink-400 hover:text-ink-700'
               }`}
             >
               <Icon className="w-4 h-4" />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Sparkles, BookOpen, Calendar, ArrowUpRight } from 'lucide-react';
+import { Star, Sparkles, BookOpen, ArrowUpRight } from 'lucide-react';
 
 export default function BookCard({ book, onSelect, onFindSimilar, isRecommendation = false }) {
   const [imgError, setImgError] = useState(false);
@@ -10,114 +10,78 @@ export default function BookCard({ book, onSelect, onFindSimilar, isRecommendati
 
   const matchPercent = book.match_percentage ?? (book.similarity_score ? Math.round(book.similarity_score * 1000) / 10 : null);
 
-  // Determine badge color based on match %
-  const getBadgeColor = (percent) => {
-    if (percent >= 70) return 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
-    if (percent >= 40) return 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40';
-    return 'bg-amber-500/20 text-amber-300 border-amber-500/40';
-  };
-
   return (
-    <div className="group relative flex flex-col rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-950/40">
-      {/* Top Cover / Header */}
-      <div 
-        className="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-slate-800 border border-slate-700/50 mb-3.5 cursor-pointer"
-        onClick={() => onSelect(book)}
-      >
+    <div className="group flex flex-col paper-panel paper-panel-hover p-4 h-full relative cursor-pointer" onClick={() => onSelect(book)}>
+      {/* Cover */}
+      <div className="relative w-full aspect-[2/3] mb-4 book-cover">
         {!imgError && book.image_url ? (
           <img
             src={book.image_url}
             alt={book.title}
             onError={() => setImgError(true)}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full p-4 flex flex-col justify-between bg-gradient-to-br from-indigo-950/80 via-slate-900 to-purple-950/80 text-left">
-            <BookOpen className="w-8 h-8 text-indigo-400/60" />
+          <div className="w-full h-full p-4 flex flex-col justify-between bg-paper-200 text-left border-b border-paper-300">
+            <BookOpen className="w-6 h-6 text-ink-300" />
             <div>
-              <p className="font-bold text-white text-sm line-clamp-3 font-serif">{book.title}</p>
-              <p className="text-xs text-indigo-300/80 mt-1">{book.author}</p>
+              <p className="display-font text-ink-900 text-sm line-clamp-3">{book.title}</p>
+              <p className="text-[10px] text-ink-600 mt-1 uppercase tracking-wider">{book.author}</p>
             </div>
-            <div className="text-[10px] uppercase font-mono tracking-widest text-slate-500">BookWise</div>
           </div>
         )}
 
-        {/* Cosine Similarity Pill (if recommendation) */}
+        {/* Cosine Similarity Tag */}
         {matchPercent !== null && (
-          <div className={`absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-xs font-bold border backdrop-blur-md shadow-lg flex items-center gap-1 ${getBadgeColor(matchPercent)}`}>
-            <Sparkles className="w-3 h-3" />
-            <span>{matchPercent}% Match</span>
-          </div>
-        )}
-
-        {/* Publication year tag */}
-        {book.publication_year && !matchPercent && (
-          <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-slate-950/80 border border-slate-800 text-[11px] font-medium text-slate-300 backdrop-blur-sm">
-            {book.publication_year}
+          <div className="absolute top-2 right-2 px-2 py-1 bg-paper-50/95 backdrop-blur-sm border border-paper-300 text-[10px] font-bold text-ink-900 shadow-sm flex items-center gap-1">
+            <Sparkles className="w-3 h-3 text-accent" />
+            <span>{matchPercent}%</span>
           </div>
         )}
 
         {/* Hover overlay hint */}
-        <div className="absolute inset-0 bg-indigo-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-xs">
-          <span className="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold shadow-lg flex items-center gap-1">
-            View Details <ArrowUpRight className="w-3.5 h-3.5" />
-          </span>
+        <div className="absolute inset-0 bg-ink-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="bg-paper-50 px-3 py-1.5 border border-paper-300 text-[11px] font-bold tracking-widest uppercase text-ink-900 shadow-sm flex items-center gap-1">
+            View <ArrowUpRight className="w-3 h-3" />
+          </div>
         </div>
       </div>
 
-      {/* Book Metadata */}
-      <div className="flex-1 flex flex-col justify-between">
-        <div>
-          {/* Genre tags */}
-          <div className="flex flex-wrap gap-1.5 mb-2">
+      {/* Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Title */}
+        <h3 className="display-font text-ink-900 text-base sm:text-[1.1rem] leading-snug line-clamp-2 mb-1 group-hover:text-accent transition-colors" title={book.title}>
+          {book.title}
+        </h3>
+        
+        {/* Author */}
+        <p className="text-xs text-ink-600 mb-3 font-medium line-clamp-1">
+          {book.author}
+        </p>
+
+        <div className="mt-auto">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-3">
             {genresList.map((genre) => (
-              <span
-                key={genre}
-                className="text-[11px] px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50"
-              >
+              <span key={genre} className="text-[10px] uppercase font-bold tracking-widest text-muted border-b border-paper-300 pb-0.5">
                 {genre}
               </span>
             ))}
           </div>
 
-          {/* Title */}
-          <h3 
-            onClick={() => onSelect(book)}
-            className="font-bold text-slate-100 text-sm sm:text-base leading-snug line-clamp-2 cursor-pointer hover:text-indigo-300 transition-colors"
-            title={book.title}
-          >
-            {book.title}
-          </h3>
+          <div className="pt-3 border-t border-paper-200 flex items-center justify-between">
+            <div className="flex items-center gap-1 text-[11px] font-semibold text-ink-900">
+              <Star className="w-3.5 h-3.5 text-ink-400" />
+              <span>{book.rating > 0 ? book.rating.toFixed(2) : '4.0'}</span>
+            </div>
 
-          {/* Author */}
-          <p className="text-xs text-slate-400 mt-1 font-medium line-clamp-1">
-            by {book.author}
-          </p>
-        </div>
-
-        {/* Bottom Bar: Rating & Recommendation CTA */}
-        <div className="pt-3 mt-3 border-t border-slate-800/60 flex items-center justify-between">
-          <div className="flex items-center gap-1.5 text-xs text-slate-300">
-            <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-            <span className="font-semibold">{book.rating > 0 ? book.rating.toFixed(2) : '4.0'}</span>
-            {book.ratings_count > 0 && (
-              <span className="text-[11px] text-slate-500">
-                ({(book.ratings_count / 1000).toFixed(0)}k)
-              </span>
-            )}
+            <button
+              onClick={(e) => { e.stopPropagation(); onFindSimilar(book); }}
+              className="text-[11px] font-bold uppercase tracking-widest text-accent hover:text-accent-dark transition-colors flex items-center gap-1"
+            >
+              Similar <Sparkles className="w-3 h-3" />
+            </button>
           </div>
-
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onFindSimilar(book);
-            }}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-400 hover:text-indigo-300 hover:underline"
-          >
-            <Sparkles className="w-3 h-3 text-indigo-400" />
-            Similar
-          </button>
         </div>
       </div>
     </div>

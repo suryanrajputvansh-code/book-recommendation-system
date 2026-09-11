@@ -1,26 +1,62 @@
 import React from 'react';
 import { Tag } from 'lucide-react';
 
-export default function GenreFilter({ genres, selectedGenre, onSelectGenre }) {
+export default function GenreFilter({
+  genres,
+  selectedGenre,
+  onSelectGenre
+}) {
   const allOptions = ['All', ...(genres || [])];
 
   return (
-    <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none py-1">
-      <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium px-2 flex-shrink-0">
+    <div className="flex items-center gap-2 overflow-x-auto border-b border-paper-300 pb-3 pt-1">
+      <div className="flex items-center gap-2 pr-2 flex-shrink-0 text-[10px] font-bold uppercase tracking-[0.14em] text-ink-500">
         <Tag className="w-3.5 h-3.5" />
-        <span>Filter:</span>
+        <span>Browse by</span>
       </div>
+
       {allOptions.map((genre) => {
-        const isSelected = selectedGenre === genre || (genre === 'All' && !selectedGenre);
+        const isSelected =
+          selectedGenre === genre ||
+          (genre === 'All' && !selectedGenre);
+
         return (
           <button
             key={genre}
-            onClick={() => onSelectGenre(genre === 'All' ? '' : genre)}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-150 flex-shrink-0 ${
-              isSelected
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                : 'bg-slate-900 text-slate-400 hover:text-slate-200 hover:bg-slate-800 border border-slate-800'
-            }`}
+            onClick={() =>
+              onSelectGenre(
+                genre === 'All' ? '' : genre
+              )
+            }
+            className={`
+              flex-shrink-0
+              px-3
+              py-1.5
+              rounded-[3px]
+              border
+              text-[11px]
+              font-semibold
+              whitespace-nowrap
+              transition-colors
+              duration-150
+
+              ${
+                isSelected
+                  ? `
+                    bg-ink-900
+                    text-paper-50
+                    border-ink-900
+                  `
+                  : `
+                    bg-transparent
+                    text-ink-600
+                    border-paper-300
+                    hover:bg-paper-200
+                    hover:border-paper-400
+                    hover:text-ink-900
+                  `
+              }
+            `}
           >
             {genre}
           </button>

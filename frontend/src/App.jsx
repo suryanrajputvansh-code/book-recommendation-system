@@ -9,7 +9,7 @@ import StatsFooter from './components/StatsFooter';
 import { api } from './services/api';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('explore'); // 'explore' | 'popular' | 'ml-recommender'
+  const [activeTab, setActiveTab] = useState('explore');
   const [selectedBook, setSelectedBook] = useState(null);
   const [selectedGenre, setSelectedGenre] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,15 +18,15 @@ export default function App() {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    // Fetch genres list
-    api.getGenres()
+    api
+      .getGenres()
       .then((data) => setGenres(data.genres || []))
-      .catch((err) => console.error('Failed to load genres:', err));
+      .catch(console.error);
 
-    // Fetch backend telemetry/stats
-    api.getStats()
+    api
+      .getStats()
       .then((data) => setStats(data))
-      .catch((err) => console.error('Failed to load stats:', err));
+      .catch(console.error);
   }, []);
 
   const handleSearchSubmit = (query) => {
@@ -45,22 +45,19 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white">
-      {/* Top Navigation */}
+    <div className="min-h-screen flex flex-col bg-paper-100 text-ink-900">
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
 
-      {/* Hero Header & Live Search */}
       <Hero
         onSearchSubmit={handleSearchSubmit}
-        onSelectBook={(book) => setSelectedBook(book)}
+        onSelectBook={setSelectedBook}
         onSelectGenre={handleSelectGenre}
       />
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         {activeTab === 'explore' && (
           <CatalogSection
             genres={genres}
@@ -68,37 +65,35 @@ export default function App() {
             onSelectGenre={setSelectedGenre}
             searchQuery={searchQuery}
             onClearSearch={() => setSearchQuery('')}
-            onSelectBook={(book) => setSelectedBook(book)}
-            onFindSimilar={(book) => setSelectedBook(book)}
+            onSelectBook={setSelectedBook}
+            onFindSimilar={setSelectedBook}
           />
         )}
 
         {activeTab === 'popular' && (
           <PopularSection
-            onSelectBook={(book) => setSelectedBook(book)}
-            onFindSimilar={(book) => setSelectedBook(book)}
+            onSelectBook={setSelectedBook}
+            onFindSimilar={setSelectedBook}
           />
         )}
 
         {activeTab === 'ml-recommender' && (
           <RecommendationSandbox
             initialBook={studioSeedBook}
-            onSelectBook={(book) => setSelectedBook(book)}
+            onSelectBook={setSelectedBook}
           />
         )}
       </main>
 
-      {/* Book Detail & Similar Recommendations Modal */}
       {selectedBook && (
         <BookModal
           book={selectedBook}
           onClose={() => setSelectedBook(null)}
-          onSelectBook={(book) => setSelectedBook(book)}
+          onSelectBook={setSelectedBook}
           onOpenStudioWithBook={handleOpenStudioWithBook}
         />
       )}
 
-      {/* Stats Footer */}
       <StatsFooter stats={stats} />
     </div>
   );

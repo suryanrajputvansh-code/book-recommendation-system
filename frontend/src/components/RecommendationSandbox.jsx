@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Sliders, ArrowRight, BookOpen, Star, Info, Cpu, CheckCircle2, Loader2 } from 'lucide-react';
+import { Sparkles, Sliders, BookOpen, Star, Info, Cpu, CheckCircle2, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 import BookCard from './BookCard';
 
@@ -11,204 +11,159 @@ export default function RecommendationSandbox({ initialBook, onSelectBook }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Sync initialBook if passed from outside
-  useEffect(() => {
-    if (initialBook) {
-      setSeedBookId(initialBook.id || initialBook.book_id);
-    }
-  }, [initialBook]);
+  useEffect(() => { if (initialBook) setSeedBookId(initialBook.id || initialBook.book_id); }, [initialBook]);
 
-  // Load catalog options for the dropdown selector
   useEffect(() => {
-    api.getBooks({ page: 1, limit: 100 })
-      .then((data) => setAllBooks(data.books || []))
-      .catch((err) => console.error('Failed to load books for studio:', err));
+    api.getBooks({ page: 1, limit: 100 }).then((data) => setAllBooks(data.books || [])).catch(console.error);
   }, []);
 
-  // Fetch recommendations whenever seedBookId or topN changes
   useEffect(() => {
     if (!seedBookId) return;
-
     let isMounted = true;
-    setIsLoading(true);
-    setError(null);
+    setIsLoading(true); setError(null);
 
     api.getRecommendations(seedBookId, topN)
-      .then((data) => {
-        if (isMounted) {
-          setRecData(data);
-        }
-      })
-      .catch((err) => {
-        if (isMounted) setError(err.message);
-      })
-      .finally(() => {
-        if (isMounted) setIsLoading(false);
-      });
+      .then((data) => { if (isMounted) setRecData(data); })
+      .catch((err) => { if (isMounted) setError(err.message); })
+      .finally(() => { if (isMounted) setIsLoading(false); });
 
-    return () => {
-      isMounted = false;
-    };
+    return () => { isMounted = false; };
   }, [seedBookId, topN]);
 
   const sourceBook = recData?.source_book;
   const recommendations = recData?.recommendations || [];
 
   return (
-    <div className="space-y-8 animate-fadeIn">
-      {/* Studio Header */}
-      <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-2">
+    <div className="space-y-10 animate-fadeIn">
+      {/* Header */}
+      <div className="border-b border-ink pb-6 flex flex-col md:flex-row justify-between gap-6">
+        <div className="max-w-2xl">
+          <div className="editorial-label mb-2 flex items-center gap-1.5 text-accent">
             <Cpu className="w-3.5 h-3.5" />
-            <span>Interactive Machine Learning Studio</span>
+            Machine Learning Studio
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-            Cosine Similarity Recommendation Engine
+          <h2 className="display-font text-3xl sm:text-4xl text-ink-900 mb-3">
+            Cosine Similarity Engine
           </h2>
-          <p className="text-sm text-slate-400 mt-1 max-w-2xl">
-            Select any seed book in the catalog to generate vector similarity recommendations based on TF-IDF weighted author, genre tags, and narrative embeddings.
+          <p className="text-sm text-ink-600 leading-relaxed">
+            Select a reference volume to generate vector similarity recommendations based on TF-IDF weighted author affinity, genre tags, and narrative embeddings.
           </p>
         </div>
 
-        {/* Model Info Card */}
-        <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl text-xs space-y-1.5 flex-shrink-0">
-          <div className="flex items-center gap-1.5 text-slate-300 font-semibold">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Precomputed Model Active</span>
+        <div className="paper-panel p-4 h-fit flex-shrink-0">
+          <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-bold text-ink-900 mb-2">
+            <CheckCircle2 className="w-4 h-4 text-ink-500" /> Precomputed Model
           </div>
-          <p className="text-slate-500 font-mono">Algorithm: Pairwise Cosine Similarity</p>
-          <p className="text-slate-500 font-mono">Vector Space: TF-IDF (1, 2) N-Grams</p>
+          <p className="text-xs font-mono text-ink-600 mb-1">Alg: Pairwise Cosine Sim</p>
+          <p className="text-xs font-mono text-ink-600">Space: TF-IDF (1,2) N-Grams</p>
         </div>
       </div>
 
-      {/* Control Panel: Seed Selection & Top-N Slider */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-900/60 p-6 rounded-3xl border border-slate-800">
-        {/* Seed Book Selector */}
+      {/* Controls */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 paper-panel bg-paper-50">
         <div className="md:col-span-2 space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-            <BookOpen className="w-4 h-4 text-indigo-400" />
-            Seed Book for Similarity Comparison
+          <label className="editorial-label text-ink-900 flex items-center gap-1.5">
+            <BookOpen className="w-4 h-4" /> Reference Book
           </label>
           <select
             value={seedBookId}
             onChange={(e) => setSeedBookId(e.target.value)}
-            className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="input-paper font-medium"
           >
             {allBooks.map((b) => (
               <option key={b.id || b.book_id} value={b.id || b.book_id}>
-                {b.title} — {b.author} ({b.genres ? b.genres.split(',')[0] : 'General'})
+                {b.title} — {b.author}
               </option>
             ))}
           </select>
         </div>
 
-        {/* Top N Slider */}
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Sliders className="w-4 h-4 text-indigo-400" />
-              Recommendations Limit (Top-N)
+            <label className="editorial-label text-ink-900 flex items-center gap-1.5">
+              <Sliders className="w-4 h-4" /> Output Limit
             </label>
-            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-indigo-600/30 text-indigo-300 border border-indigo-500/30">
-              {topN} books
-            </span>
+            <span className="text-[10px] font-mono font-bold bg-ink-100 px-1.5 py-0.5">{topN}</span>
           </div>
           <input
             type="range"
-            min="2"
-            max="12"
+            min="2" max="12"
             value={topN}
             onChange={(e) => setTopN(Number(e.target.value))}
-            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500 mt-3"
+            className="w-full h-1 bg-paper-300 rounded-none appearance-none cursor-pointer accent-ink-900 mt-4"
           />
-          <div className="flex justify-between text-[10px] text-slate-500 font-mono">
-            <span>2</span>
-            <span>6</span>
-            <span>12</span>
+          <div className="flex justify-between text-[10px] text-ink-400 font-mono pt-1">
+            <span>2</span><span>6</span><span>12</span>
           </div>
         </div>
       </div>
 
-      {/* Seed Book Inspection Banner */}
+      {/* Reference Book Summary */}
       {sourceBook && (
-        <div className="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-purple-950/30 p-5 rounded-2xl border border-indigo-500/20 flex flex-col sm:flex-row items-center gap-5">
-          <div className="w-16 h-22 rounded-lg overflow-hidden bg-slate-800 flex-shrink-0 border border-slate-700">
+        <div className="flex flex-col sm:flex-row items-center gap-6 p-6 border border-line bg-paper-50">
+          <div className="w-20 h-28 book-cover flex-shrink-0">
             {sourceBook.image_url ? (
-              <img src={sourceBook.image_url} alt={sourceBook.title} className="w-full h-full object-cover" />
+              <img src={sourceBook.image_url} alt={sourceBook.title} />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-slate-500">
+              <div className="w-full h-full flex items-center justify-center bg-paper-200 text-muted">
                 <BookOpen className="w-6 h-6" />
               </div>
             )}
           </div>
           <div className="flex-1 text-center sm:text-left">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-indigo-400">Current Reference Title</span>
-            <h3 className="text-lg font-bold text-white font-serif">{sourceBook.title}</h3>
-            <p className="text-xs text-slate-300">by {sourceBook.author} • <span className="text-slate-400">{sourceBook.genres}</span></p>
+            <div className="editorial-label text-accent mb-1">Source Vector</div>
+            <h3 className="display-font text-2xl text-ink-900">{sourceBook.title}</h3>
+            <p className="text-sm text-ink-600 mt-1">{sourceBook.author}</p>
           </div>
-          <div className="text-center sm:text-right flex-shrink-0">
-            <div className="text-xs font-mono text-slate-400">Average Rating</div>
-            <div className="text-lg font-bold text-amber-400 flex items-center justify-center sm:justify-end gap-1">
-              <Star className="w-4 h-4 fill-amber-400" />
+          <div className="text-center sm:text-right">
+            <div className="editorial-label">Avg Rating</div>
+            <div className="display-font text-2xl text-ink-900 flex items-center justify-center sm:justify-end gap-1 mt-1">
               {sourceBook.rating?.toFixed(2)}
             </div>
           </div>
         </div>
       )}
 
-      {/* Results Section */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-indigo-400" />
-            <h3 className="text-lg font-bold text-white">Generated Recommendations</h3>
-          </div>
-          <span className="text-xs text-slate-400 font-mono">
-            Sorted by Cosine Similarity Score ↓
-          </span>
+      {/* Results */}
+      <div>
+        <div className="flex items-end justify-between border-b border-line pb-3 mb-6">
+          <h3 className="display-font text-2xl text-ink-900">Computed Results</h3>
+          <span className="editorial-label">Sorted by Cosine Score ↓</span>
         </div>
 
         {isLoading ? (
-          <div className="flex items-center justify-center py-16 text-slate-400 gap-2">
-            <Loader2 className="w-6 h-6 animate-spin text-indigo-500" />
-            <span className="text-sm font-medium">Computing similarity rankings...</span>
+          <div className="flex flex-col items-center justify-center py-16 text-ink-500 gap-3">
+            <Loader2 className="w-6 h-6 animate-spin" />
+            <span className="editorial-label">Processing Vectors...</span>
           </div>
         ) : error ? (
-          <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-sm">
+          <div className="p-4 bg-accent-light text-accent-dark font-medium border border-accent text-sm">
             {error}
           </div>
         ) : recommendations.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
             {recommendations.map((rec) => (
-              <BookCard
-                key={rec.id}
-                book={rec}
-                onSelect={onSelectBook}
-                onFindSimilar={(b) => setSeedBookId(b.id || b.book_id)}
-                isRecommendation={true}
-              />
+              <BookCard key={rec.id} book={rec} onSelect={onSelectBook} onFindSimilar={(b) => setSeedBookId(b.id || b.book_id)} isRecommendation />
             ))}
           </div>
         ) : (
-          <p className="text-slate-500 text-center py-8">No recommendation matches found.</p>
+          <p className="text-ink-500 text-center py-10 font-serif italic">No significant vectors aligned.</p>
         )}
       </div>
 
-      {/* Formula & Explainability Callout */}
-      <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs sm:text-sm text-slate-300">
-        <div className="flex items-center gap-2 text-white font-bold text-base">
-          <Info className="w-4 h-4 text-indigo-400" />
-          <span>How does this recommendation engine work?</span>
+      {/* Explainability */}
+      <div className="p-6 md:p-8 paper-panel bg-paper-50 space-y-4">
+        <div className="editorial-label text-ink-900 flex items-center gap-1.5 mb-2">
+          <Info className="w-4 h-4" /> Methodology
         </div>
-        <p className="text-slate-400 leading-relaxed">
-          The recommendation engine constructs high-dimensional TF-IDF vectors combining weighted metadata: author affinity, categorized genres, narrative keywords, and book synopses. The similarity between any seed book <span className="text-indigo-300 font-mono">A</span> and candidate book <span className="text-indigo-300 font-mono">B</span> is calculated using Cosine Similarity:
+        <p className="text-sm text-ink-700 leading-relaxed max-w-4xl">
+          The engine constructs high-dimensional TF-IDF vectors combining author affinity, genre categorizations, and narrative synopses. The similarity between any reference book <span className="font-mono bg-paper-200 px-1">A</span> and candidate <span className="font-mono bg-paper-200 px-1">B</span> is calculated as:
         </p>
-        <div className="p-4 rounded-2xl bg-slate-950 font-mono text-center text-indigo-300 border border-slate-800 text-sm sm:text-base">
+        <div className="p-4 bg-ink-50 font-mono text-center text-ink-900 border border-line text-sm sm:text-base my-4">
           Similarity(A, B) = cos(θ) = (A · B) / (‖A‖ ‖B‖)
         </div>
-        <p className="text-slate-400 leading-relaxed">
-          Scores range from 0.0 (unrelated) to 1.0 (identical thematic profile). Top-N items with the highest angular alignment are returned with zero runtime latency due to offline matrix precomputation.
+        <p className="text-sm text-ink-700 leading-relaxed max-w-4xl">
+          Scores strictly range from 0.0 to 1.0. The Top-N subset is retrieved via an offline-precomputed similarity matrix, guaranteeing sub-millisecond query execution.
         </p>
       </div>
     </div>

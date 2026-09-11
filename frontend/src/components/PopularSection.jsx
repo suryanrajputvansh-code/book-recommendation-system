@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flame, Star, Sparkles, Loader2 } from 'lucide-react';
+import { Flame, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 import BookCard from './BookCard';
 
@@ -13,52 +13,39 @@ export default function PopularSection({ onSelectBook, onFindSimilar }) {
       .then((data) => {
         if (isMounted) setPopularBooks(data.popular_books || []);
       })
-      .catch((err) => console.error('Failed to load popular books:', err))
-      .finally(() => {
-        if (isMounted) setIsLoading(false);
-      });
-
-    return () => {
-      isMounted = false;
-    };
+      .catch((err) => console.error(err))
+      .finally(() => { if (isMounted) setIsLoading(false); });
+    return () => { isMounted = false; };
   }, []);
 
   return (
     <section className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
-            <Flame className="w-5 h-5" />
-          </div>
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white">Popular & Top-Rated Books</h2>
-            <p className="text-xs sm:text-sm text-slate-400">
-              Ranked by Bayesian weighted average of community ratings and review volume
-            </p>
-          </div>
+      <div className="pb-4 border-b border-ink">
+        <div className="editorial-label mb-2 flex items-center gap-1.5 text-accent">
+          <Flame className="w-3.5 h-3.5" />
+          Highly Regarded
         </div>
+        <h2 className="display-font text-3xl sm:text-4xl text-ink-900">
+          The Bestseller List
+        </h2>
+        <p className="text-sm text-ink-600 mt-2 max-w-2xl">
+          Ranked by a Bayesian weighted average of community ratings and review volume.
+        </p>
       </div>
 
-      {/* Grid or Loader */}
       {isLoading ? (
-        <div className="flex items-center justify-center py-16 text-slate-400 gap-2">
-          <Loader2 className="w-6 h-6 animate-spin text-indigo-500" />
-          <span className="text-sm font-medium">Loading popular books...</span>
+        <div className="flex flex-col items-center justify-center py-20 text-ink-500 gap-3">
+          <Loader2 className="w-6 h-6 animate-spin text-ink-300" />
+          <span className="editorial-label">Compiling Rankings...</span>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
           {popularBooks.map((book, idx) => (
-            <div key={book.id} className="relative">
-              {/* Rank Badge */}
-              <div className="absolute -top-2 -left-2 z-20 w-7 h-7 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 text-slate-950 font-black text-xs flex items-center justify-center shadow-lg border-2 border-slate-900">
-                #{idx + 1}
+            <div key={book.id} className="relative mt-3">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20 px-3 py-0.5 bg-ink-900 text-paper-50 text-[10px] font-bold tracking-widest uppercase border border-paper-100 shadow-sm">
+                Rank {idx + 1}
               </div>
-              <BookCard
-                book={book}
-                onSelect={onSelectBook}
-                onFindSimilar={onFindSimilar}
-              />
+              <BookCard book={book} onSelect={onSelectBook} onFindSimilar={onFindSimilar} />
             </div>
           ))}
         </div>

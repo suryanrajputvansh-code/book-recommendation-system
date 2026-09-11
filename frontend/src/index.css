@@ -2,49 +2,478 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   BOOKSHELF — EDITORIAL VISUAL SYSTEM
+   Visual only. No API / backend / application logic.
+========================================================= */
+
 @layer base {
+  :root {
+    --paper: #f7f4ee;
+    --paper-light: #fbfaf7;
+    --paper-dark: #ece7de;
+
+    --ink: #1e1d1a;
+    --ink-soft: #4d4a44;
+    --muted: #777269;
+
+    --line: #d8d2c7;
+    --line-dark: #bdb5a9;
+
+    --accent: #7b2f32;
+    --accent-dark: #5f2225;
+    --accent-light: #efe0df;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--paper);
+  }
+
   body {
-    @apply bg-slate-950 text-slate-100 min-h-screen font-sans;
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+      linear-gradient(
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.18)
+      ),
+      var(--paper);
+
+    color: var(--ink);
+
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    color: var(--ink);
+    font-weight: 500;
   }
 }
 
-/* Custom modern glow and animations */
-.glow-primary {
-  box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.25);
+/* =========================================================
+   REMOVE THE OLD AI LOOK
+========================================================= */
+
+/* Kill old glow effects */
+.glow-primary,
+.glow-card {
+  box-shadow: none !important;
+}
+
+.glow-card {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .glow-card:hover {
-  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 22px rgba(30, 29, 26, 0.08) !important;
+  transform: translateY(-2px);
 }
 
-/* Glassmorphic card styling */
+/* Kill glassmorphism */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--paper-light) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  border: 1px solid var(--line) !important;
+
+  box-shadow: none !important;
+}
+
+.glass-panel-hover {
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
 .glass-panel-hover:hover {
-  background: rgba(30, 41, 59, 0.85);
-  border-color: rgba(99, 102, 241, 0.35);
+  background: #fff !important;
+  border-color: var(--line-dark) !important;
 }
 
-/* Custom sleek scrollbar */
+/* =========================================================
+   GENERAL SURFACES
+========================================================= */
+
+.paper-panel {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.paper-panel-hover {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.paper-panel-hover:hover {
+  border-color: var(--line-dark);
+  box-shadow: 0 8px 24px rgba(30, 29, 26, 0.07);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   EDITORIAL TYPOGRAPHY
+========================================================= */
+
+.display-font {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.eyebrow {
+  font-family:
+    Inter,
+    sans-serif;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  color: var(--accent);
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: inherit;
+}
+
+a:not(.no-editorial-link) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 10px 18px;
+
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+
+  background: var(--accent);
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.01em;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 10px 18px;
+
+  border: 1px solid var(--line-dark);
+  border-radius: 3px;
+
+  background: transparent;
+  color: var(--ink);
+
+  font-size: 13px;
+  font-weight: 650;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.btn-secondary:hover {
+  background: var(--paper-dark);
+  border-color: var(--ink-soft);
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-paper {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid var(--line-dark);
+  border-radius: 3px;
+
+  background: var(--paper-light);
+  color: var(--ink);
+
+  outline: none;
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.input-paper::placeholder {
+  color: var(--muted);
+}
+
+.input-paper:hover {
+  border-color: #958d82;
+}
+
+.input-paper:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 2px rgba(123, 47, 50, 0.08);
+}
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+  padding: 7px 12px;
+
+  border: 1px solid var(--line);
+  border-radius: 3px;
+
+  background: transparent;
+  color: var(--ink-soft);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.filter-button:hover {
+  background: var(--paper-dark);
+  color: var(--ink);
+  border-color: var(--line-dark);
+}
+
+.filter-button.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper-light);
+}
+
+/* =========================================================
+   BOOK COVERS
+========================================================= */
+
+.book-cover {
+  overflow: hidden;
+
+  border-radius: 2px;
+
+  background: var(--paper-dark);
+
+  box-shadow:
+    0 2px 7px rgba(30, 29, 26, 0.14);
+}
+
+.book-cover img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 300ms ease;
+}
+
+.book-cover:hover img {
+  transform: scale(1.015);
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: var(--paper-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 4px;
+  background: #bbb2a6;
+  border: 3px solid var(--paper-dark);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #968d82;
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #bbb2a6 var(--paper-dark);
+}
+
+/* =========================================================
+   UTILITY CLASSES FOR THE EXISTING COMPONENTS
+========================================================= */
+
+.editorial-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+}
+
+.editorial-rule-dark {
+  width: 100%;
+  height: 1px;
+  background: var(--ink);
+}
+
+.editorial-section {
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+}
+
+.editorial-label {
+  color: var(--muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.editorial-title {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+
+  font-weight: 500;
+}
+
+.editorial-subtitle {
+  color: var(--ink-soft);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .editorial-title {
+    font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .editorial-title {
+    font-size: 2rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 40px;
+    padding: 9px 14px;
+  }
 }
