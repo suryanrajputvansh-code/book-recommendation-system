@@ -52,7 +52,7 @@ export default {
 
       fontFamily: {
         sans: [
-          'Inter',
+          'Lato',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',
@@ -62,6 +62,7 @@ export default {
         ],
 
         serif: [
+          '"Playfair Display"',
           'Georgia',
           'Cambria',
           '"Times New Roman"',

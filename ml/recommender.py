@@ -23,6 +23,27 @@ class BookRecommender:
         self.metadata: Dict[str, Any] = {}
         self._load_or_train(auto_train)
 
+
+    def _normalize_genres(self, raw_genres_str: str) -> str:
+        if not raw_genres_str: return "Classic Literature"
+        raw_genres = [g.strip().lower() for g in raw_genres_str.split(",")]
+        normalized = set()
+        for g in raw_genres:
+            if any(x in g for x in ["science fiction", "sci-fi", "space opera", "cyberpunk", "alien", "hard sci-fi", "dystopian"]): normalized.add("Science Fiction")
+            elif any(x in g for x in ["fantasy", "magic", "epic fantasy", "high fantasy", "mythology"]): normalized.add("Fantasy")
+            elif any(x in g for x in ["mystery", "thriller", "crime", "suspense", "noir", "whodunit", "detective"]): normalized.add("Mystery & Thriller")
+            elif any(x in g for x in ["classic", "literature", "novella"]): normalized.add("Classic Literature")
+            elif any(x in g for x in ["historical", "history"]): normalized.add("Historical Fiction")
+            elif any(x in g for x in ["romance", "love", "lgbtq+"]): normalized.add("Romance")
+            elif any(x in g for x in ["horror", "gothic", "absurdist"]): normalized.add("Horror & Gothic")
+            elif any(x in g for x in ["young adult", "ya", "coming-of-age"]): normalized.add("Young Adult")
+            elif any(x in g for x in ["computer science", "programming", "software", "tech", "technology", "algorithms", "data", "machine learning", "artificial intelligence"]): normalized.add("Technology & Programming")
+            elif any(x in g for x in ["self-help", "productivity", "personal growth", "habits", "finance", "economics"]): normalized.add("Self-Help & Productivity")
+            elif any(x in g for x in ["philosophy", "psychology", "stoicism", "behavioral", "anthropology", "science"]): normalized.add("Philosophy & Psychology")
+            elif any(x in g for x in ["non-fiction", "memoir", "biography", "letters"]): normalized.add("Non-Fiction")
+            else: normalized.add("Classic Literature")
+        return ", ".join(sorted(list(normalized)))
+
     def _load_or_train(self, auto_train: bool):
         sim_matrix_path = os.path.join(self.models_dir, "similarity_matrix.npy")
         books_json_path = os.path.join(self.models_dir, "books_cleaned.json")
@@ -40,6 +61,10 @@ class BookRecommender:
         self.similarity_matrix = np.load(sim_matrix_path)
         with open(books_json_path, "r", encoding="utf-8") as f:
             self.books = json.load(f)
+
+        # Normalize genres to exactly 12 canonical categories
+        for book in self.books:
+            book["genres"] = self._normalize_genres(book.get("genres", ""))
 
         if os.path.exists(metadata_path):
             with open(metadata_path, "r", encoding="utf-8") as f:

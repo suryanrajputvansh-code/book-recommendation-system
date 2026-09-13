@@ -70,9 +70,38 @@ def prepare_model(data_path: str = DEFAULT_DATA_PATH, models_dir: str = DEFAULT_
     df["title"] = df["title"].astype(str).str.strip()
     df = df.drop_duplicates(subset=["book_id"]).copy()
 
+    # Enforce exactly 12 Core Genres
+    CORE_GENRES = [
+        "Fiction", "Non-Fiction", "Science Fiction", "Fantasy",
+        "Mystery", "Thriller", "Romance", "Historical Fiction",
+        "Biography", "Philosophy", "Classic", "Computer Science"
+    ]
+    
+    def map_to_core_genres(raw_genres):
+        if not isinstance(raw_genres, str):
+            return "Fiction"
+        raw_genres_lower = raw_genres.lower()
+        mapped = []
+        for cg in CORE_GENRES:
+            # Simple keyword matching for simplicity
+            if cg.lower() in raw_genres_lower:
+                mapped.append(cg)
+        
+        # Fallbacks for specific common overlaps
+        if "sci-fi" in raw_genres_lower: mapped.append("Science Fiction")
+        if "tech" in raw_genres_lower or "programming" in raw_genres_lower: mapped.append("Computer Science")
+        if "history" in raw_genres_lower: mapped.append("Historical Fiction")
+        
+        mapped = list(set(mapped))
+        # If no match, assign a random valid genre or default
+        if not mapped:
+            mapped = ["Fiction"]
+        return ", ".join(mapped)
+
+    df["genres"] = df["genres"].apply(map_to_core_genres)
+
     # Fill missing optional fields
     df["author"] = df["author"].fillna("Unknown Author").astype(str).str.strip()
-    df["genres"] = df["genres"].fillna("General").astype(str).str.strip()
     df["description"] = df["description"].fillna("").astype(str).str.strip()
     df["image_url"] = df["image_url"].fillna("").astype(str).str.strip()
 

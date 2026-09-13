@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-11T18:00:38.625735+00:00",
+  "generated_at": "2026-09-13T09:54:20.944789+00:00",
   "total_books": 85,
-  "vocabulary_size": 3678,
+  "vocabulary_size": 3381,
   "features": [
     "genres",
     "author",
