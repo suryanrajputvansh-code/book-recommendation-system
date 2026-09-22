@@ -6,7 +6,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 
-# Add project root to sys.path
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
@@ -28,7 +27,7 @@ FRONTEND_DIST_DIR = os.path.join(BASE_DIR, "frontend", "dist")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: initialize recommender singleton
+    
     try:
         RecommenderService.get_instance()
         print("[+] Backend RecommenderService successfully initialized.")
@@ -44,7 +43,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS configuration
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
@@ -54,9 +53,6 @@ app.add_middleware(
 )
 
 
-# ==========================================
-# --- API Endpoints ---
-# ==========================================
 
 @app.get("/api/health", tags=["Health & Status"])
 def health():
@@ -154,11 +150,9 @@ def get_book_recommendations(
     return rec_data
 
 
-# ==========================================
-# --- Serve Compiled Frontend (All-In-One) ---
-# ==========================================
+
 if os.path.exists(FRONTEND_DIST_DIR):
-    # Mount assets folder
+
     assets_dir = os.path.join(FRONTEND_DIST_DIR, "assets")
     if os.path.exists(assets_dir):
         app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
@@ -172,7 +166,7 @@ if os.path.exists(FRONTEND_DIST_DIR):
 
     @app.get("/{full_path:path}", include_in_schema=False)
     async def serve_frontend_fallback(full_path: str):
-        # Don't intercept API paths or docs
+       
         if full_path.startswith(("api", "docs", "redoc", "openapi.json")):
             raise HTTPException(status_code=404, detail="Not found")
         file_path = os.path.join(FRONTEND_DIST_DIR, full_path)
@@ -194,7 +188,6 @@ else:
         }
 
 
-# Global exception handler
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
     return JSONResponse(
