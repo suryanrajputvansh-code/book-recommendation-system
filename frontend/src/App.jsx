@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AuthModal from './components/AuthModal';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CatalogSection from './components/CatalogSection';
@@ -9,6 +10,7 @@ import StatsFooter from './components/StatsFooter';
 import { api } from './services/api';
 
 export default function App() {
+  const [showAuth, setShowAuth] = useState(false);
   const [activeTab, setActiveTab] = useState('explore');
   const [selectedBook, setSelectedBook] = useState(null);
   const [selectedGenre, setSelectedGenre] = useState('');
@@ -93,6 +95,16 @@ export default function App() {
           onOpenStudioWithBook={handleOpenStudioWithBook}
         />
       )}
+{showAuth && (
+  <AuthModal
+    onClose={() => setShowAuth(false)}
+    onAuthSuccess={(user) => {
+      setShowAuth(false);
+      console.log('Logged in:', user);
+    }}
+  />
+)}
+
 
       <StatsFooter stats={stats} />
     </div>

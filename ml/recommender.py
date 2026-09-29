@@ -203,15 +203,21 @@ class BookRecommender:
         }
 
     def get_all_genres(self) -> List[str]:
-        """Extract unique genre tags sorted by frequency."""
-        genre_freq: Dict[str, int] = {}
+        """Return exactly the 12 canonical genres, in order of how many books have each."""
+        CANONICAL = [
+            "Fiction", "Non-Fiction", "Science Fiction", "Fantasy",
+            "Mystery", "Thriller", "Romance", "Historical Fiction",
+            "Biography", "Philosophy", "Classic", "Computer Science",
+        ]
+        # count how many books contain each canonical genre (case-insensitive)
+        counts: Dict[str, int] = {g: 0 for g in CANONICAL}
         for book in self.books:
-            genres = [g.strip() for g in str(book.get("genres", "")).split(",") if g.strip()]
-            for g in genres:
-                genre_freq[g] = genre_freq.get(g, 0) + 1
-        
-        sorted_genres = sorted(genre_freq.items(), key=lambda item: (-item[1], item[0]))
-        return [g[0] for g in sorted_genres]
+            raw = str(book.get("genres", "")).lower()
+            for g in CANONICAL:
+                if g.lower() in raw:
+                    counts[g] += 1
+        # sort by count descending, keep fixed list (always show all 12)
+        return sorted(CANONICAL, key=lambda g: -counts[g])
 
     def get_stats(self) -> Dict[str, Any]:
         """System health and metadata statistics."""
