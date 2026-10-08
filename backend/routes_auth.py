@@ -1,3 +1,4 @@
+import os
 import re
 from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, Response, status
@@ -43,13 +44,14 @@ class AuthResponse(BaseModel):
 
 
 def set_auth_cookie(response: Response, token: str):
+    is_production = os.environ.get("VERCEL", "") == "1" or os.environ.get("ENVIRONMENT", "dev").lower() == "production"
     response.set_cookie(
         key="access_token",
         value=token,
         httponly=True,
         max_age=settings.JWT_EXPIRE_DAYS * 24 * 3600,
         samesite="lax",
-        secure=False  # Set True in production HTTPS
+        secure=is_production  # Must be True on HTTPS (Vercel/Render)
     )
 
 

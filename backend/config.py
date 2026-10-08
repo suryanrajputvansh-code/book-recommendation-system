@@ -28,7 +28,15 @@ class Settings:
         "http://127.0.0.1:5173",
         "http://localhost:5000",
         "http://127.0.0.1:5000",
+        # Vercel deployments — covers all preview and production URLs
+        "https://book-recommendation-system-7iud8fm61-vs-a6df.vercel.app",
+        "https://book-recommendation-system-vs-a6df.vercel.app",
     ]
+
+    # Read extra origins from env var (comma-separated), allows adding new domains without code changes
+    _extra = os.getenv("EXTRA_CORS_ORIGINS", "")
+    if _extra:
+        CORS_ORIGINS = CORS_ORIGINS + [o.strip() for o in _extra.split(",") if o.strip()]
 
 
 settings = Settings()
