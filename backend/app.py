@@ -22,12 +22,21 @@ from backend.models import (
 )
 from backend.services import RecommenderService
 
+from backend.database import init_db
+from backend.routes_auth import router as auth_router
+from backend.routes_ratings import router as ratings_router
+
 FRONTEND_DIST_DIR = os.path.join(BASE_DIR, "frontend", "dist")
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    
+    try:
+        init_db()
+        print("[+] Database tables initialized.")
+    except Exception as e:
+        print(f"[!] Warning during DB initialization: {e}")
+
     try:
         RecommenderService.get_instance()
         print("[+] Backend RecommenderService successfully initialized.")
@@ -51,6 +60,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth_router)
+app.include_router(ratings_router)
+
 
 
 

@@ -6,11 +6,11 @@ client = TestClient(app)
 
 
 def test_root_endpoint():
-    response = client.get("/")
+    response = client.get("/api/health")
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "online"
-    assert "endpoints" in data
+    assert "service" in data
 
 
 def test_get_books_paginated():

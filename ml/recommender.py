@@ -145,6 +145,54 @@ class BookRecommender:
 
         return recommendations
 
+    def get_personalized_recommendations(self, user_ratings: Dict[str, int], limit: int = 6) -> List[Dict[str, Any]]:
+        """
+        Score unrated books by summing similarity to rated books weighted by (rating - 3).
+        Liked books (4-5) push similar books up; disliked books (1-2) push similar books down.
+        """
+        if not user_ratings or len(user_ratings) < 3 or self.similarity_matrix is None:
+            return []
+
+        # Convert rated book_ids to indices and weights
+        rated_indices = []
+        weights = []
+        rated_book_ids = set()
+
+        for b_id, r_val in user_ratings.items():
+            b_id_str = str(b_id).strip()
+            idx = self.id_to_index.get(b_id_str)
+            if idx is not None:
+                rated_indices.append(idx)
+                weights.append(float(r_val - 3))
+                rated_book_ids.add(b_id_str)
+
+        if not rated_indices:
+            return []
+
+        scores = {}
+        for idx in range(len(self.books)):
+            book_obj = self.index_to_book[idx]
+            book_id_str = str(book_obj.get("book_id", ""))
+            if book_id_str in rated_book_ids:
+                continue
+
+            # Calculate score as dot product of similarity row across rated indices with weights
+            sim_sub = self.similarity_matrix[idx, rated_indices]
+            score = float(np.dot(sim_sub, weights))
+            scores[idx] = score
+
+        # Sort candidate indices by score descending
+        sorted_candidates = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+
+        results = []
+        for idx, score in sorted_candidates[:limit]:
+            b_copy = self.index_to_book[idx].copy()
+            b_copy["affinity_score"] = round(score, 3)
+            b_copy["recommendation_reason"] = "Personalized based on your reading preferences and ratings"
+            results.append(b_copy)
+
+        return results
+
     def get_popular_books(self, limit: int = 10) -> List[Dict[str, Any]]:
         """
         Calculate weighted score (IMDb/Bayesian style) combining average rating and popularity.

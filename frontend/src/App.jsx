@@ -19,6 +19,33 @@ export default function App() {
   const [genres, setGenres] = useState([]);
   const [stats, setStats] = useState(null);
 
+  // Sync tab with URL hash on load & hash changes
+  useEffect(() => {
+    const parseHash = () => {
+      const hash = window.location.hash.replace('#', '').trim();
+      if (['explore', 'popular', 'ml-recommender'].includes(hash)) {
+        return hash;
+      }
+      return 'explore';
+    };
+
+    const initialTab = parseHash();
+    setActiveTab(initialTab);
+
+    const handleHashChange = () => {
+      const currentTab = parseHash();
+      setActiveTab(currentTab);
+      const targetEl = document.getElementById(currentTab);
+      if (targetEl) {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        targetEl.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   useEffect(() => {
     api
       .getGenres()
@@ -31,26 +58,38 @@ export default function App() {
       .catch(console.error);
   }, []);
 
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    if (window.location.hash !== `#${tabId}`) {
+      window.history.pushState(null, '', `#${tabId}`);
+    }
+    const targetEl = document.getElementById(tabId);
+    if (targetEl) {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      targetEl.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+    }
+  };
+
   const handleSearchSubmit = (query) => {
     setSearchQuery(query);
-    setActiveTab('explore');
+    handleTabChange('explore');
   };
 
   const handleSelectGenre = (genre) => {
     setSelectedGenre(genre);
-    setActiveTab('explore');
+    handleTabChange('explore');
   };
 
   const handleOpenStudioWithBook = (book) => {
     setStudioSeedBook(book);
-    setActiveTab('ml-recommender');
+    handleTabChange('ml-recommender');
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-paper-100 text-ink-900">
       <Navbar
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={handleTabChange}
       />
 
       <Hero
@@ -61,29 +100,35 @@ export default function App() {
 
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         {activeTab === 'explore' && (
-          <CatalogSection
-            genres={genres}
-            selectedGenre={selectedGenre}
-            onSelectGenre={setSelectedGenre}
-            searchQuery={searchQuery}
-            onClearSearch={() => setSearchQuery('')}
-            onSelectBook={setSelectedBook}
-            onFindSimilar={setSelectedBook}
-          />
+          <div id="explore" className="scroll-mt-24">
+            <CatalogSection
+              genres={genres}
+              selectedGenre={selectedGenre}
+              onSelectGenre={setSelectedGenre}
+              searchQuery={searchQuery}
+              onClearSearch={() => setSearchQuery('')}
+              onSelectBook={setSelectedBook}
+              onFindSimilar={setSelectedBook}
+            />
+          </div>
         )}
 
         {activeTab === 'popular' && (
-          <PopularSection
-            onSelectBook={setSelectedBook}
-            onFindSimilar={setSelectedBook}
-          />
+          <div id="popular" className="scroll-mt-24">
+            <PopularSection
+              onSelectBook={setSelectedBook}
+              onFindSimilar={setSelectedBook}
+            />
+          </div>
         )}
 
         {activeTab === 'ml-recommender' && (
-          <RecommendationSandbox
-            initialBook={studioSeedBook}
-            onSelectBook={setSelectedBook}
-          />
+          <div id="ml-recommender" className="scroll-mt-24">
+            <RecommendationSandbox
+              initialBook={studioSeedBook}
+              onSelectBook={setSelectedBook}
+            />
+          </div>
         )}
       </main>
 
@@ -95,18 +140,18 @@ export default function App() {
           onOpenStudioWithBook={handleOpenStudioWithBook}
         />
       )}
-{showAuth && (
-  <AuthModal
-    onClose={() => setShowAuth(false)}
-    onAuthSuccess={(user) => {
-      setShowAuth(false);
-      console.log('Logged in:', user);
-    }}
-  />
-)}
+      {showAuth && (
+        <AuthModal
+          onClose={() => setShowAuth(false)}
+          onAuthSuccess={(user) => {
+            setShowAuth(false);
+            console.log('Logged in:', user);
+          }}
+        />
+      )}
 
-
-      <StatsFooter stats={stats} />
+      <StatsFooter stats={stats} onNavigateTab={handleTabChange} />
     </div>
   );
 }
+

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Database, Cpu, CheckCircle2 } from 'lucide-react';
 
-export default function StatsFooter({ stats }) {
+export default function StatsFooter({ stats, onNavigateTab }) {
   return (
     <footer className="border-t border-ink bg-ink-900 text-paper-400 py-16 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="space-y-4">
-            <div className="display-font text-2xl text-paper-50 tracking-tight">
+            <div 
+              className="display-font text-2xl text-paper-50 tracking-tight cursor-pointer"
+              onClick={() => onNavigateTab && onNavigateTab('explore')}
+            >
               BookWise
             </div>
             <p className="text-xs text-ink-300 leading-relaxed max-w-xs">
@@ -16,12 +19,17 @@ export default function StatsFooter({ stats }) {
           </div>
 
           <div className="space-y-3 text-xs">
-            <h4 className="text-paper-100 font-bold uppercase tracking-widest text-[10px]">Architecture</h4>
+            <h4 className="text-paper-100 font-bold uppercase tracking-widest text-[10px]">Navigation</h4>
             <ul className="space-y-2 text-ink-300">
-              <li className="border-b border-ink-700 pb-1">Ingestion: Pandas CSV</li>
-              <li className="border-b border-ink-700 pb-1">Features: Weighted Text</li>
-              <li className="border-b border-ink-700 pb-1">Model: TF-IDF + Cosine</li>
-              <li className="border-b border-ink-700 pb-1">Backend: FastAPI</li>
+              <li>
+                <button onClick={() => onNavigateTab && onNavigateTab('explore')} className="hover:text-paper-100 transition-colors">Explore Catalog</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateTab && onNavigateTab('popular')} className="hover:text-paper-100 transition-colors">Popular & Top Rated</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateTab && onNavigateTab('ml-recommender')} className="hover:text-paper-100 transition-colors">ML Recommender Studio</button>
+              </li>
             </ul>
           </div>
 
@@ -30,7 +38,7 @@ export default function StatsFooter({ stats }) {
             <div className="space-y-2 text-ink-300 font-mono">
               <p>Status: <span className="text-paper-100">{stats?.status || 'Online'}</span></p>
               <p>Catalog: <span className="text-paper-100">{stats?.total_books || 100}</span> titles</p>
-              <p>Genres: <span className="text-paper-100">{stats?.genres_count || 32}</span> listed</p>
+              <p>Genres: <span className="text-paper-100">{stats?.genres_count || 12}</span> listed</p>
             </div>
           </div>
 
@@ -62,10 +70,10 @@ export default function StatsFooter({ stats }) {
             </p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-6 uppercase tracking-wider font-bold shrink-0">
-            <a href="http://127.0.0.1:5000/docs" target="_blank" rel="noreferrer" className="hover:text-paper-100 transition-colors">
+            <a href="/docs" target="_blank" rel="noreferrer" className="hover:text-paper-100 transition-colors">
               API Docs
             </a>
-            <a href="http://127.0.0.1:5000/api/stats" target="_blank" rel="noreferrer" className="hover:text-paper-100 transition-colors">
+            <a href="/api/stats" target="_blank" rel="noreferrer" className="hover:text-paper-100 transition-colors">
               Telemetry
             </a>
           </div>
@@ -74,3 +82,4 @@ export default function StatsFooter({ stats }) {
     </footer>
   );
 }
+
