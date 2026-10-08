@@ -15,7 +15,10 @@ class Settings:
     DATASET_PATH: str = os.getenv("DATASET_PATH", os.path.join(BASE_DIR, "data", "books.csv"))
     MODELS_DIR: str = os.getenv("MODELS_DIR", os.path.join(BASE_DIR, "models"))
     
-    DATABASE_URL: str = os.getenv("DATABASE_URL", f"sqlite:///{os.path.join(BASE_DIR, 'data', 'bookwise.db')}")
+    # On Vercel, only /tmp is writable. Detect Vercel and use /tmp for SQLite.
+    _is_vercel = os.getenv("VERCEL", "") == "1"
+    _default_db = "sqlite:////tmp/bookwise.db" if _is_vercel else f"sqlite:///{os.path.join(BASE_DIR, 'data', 'bookwise.db')}"
+    DATABASE_URL: str = os.getenv("DATABASE_URL", _default_db)
     JWT_SECRET: str = os.getenv("JWT_SECRET", "supersecretkey-change-this-in-production-12345")
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRE_DAYS: int = 7
