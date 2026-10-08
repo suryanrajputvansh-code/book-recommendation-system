@@ -27,9 +27,18 @@ export default function AuthModal({ onClose, onAuthSuccess }) {
   useEffect(() => {
     let timer;
     const initGoogleBtn = () => {
+      const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || 'your-google-client-id.apps.googleusercontent.com';
+      
+      // Don't render the Google button if we are using the placeholder ID
+      // This prevents the confusing 401 Authorization error for the user
+      if (clientId === 'your-google-client-id.apps.googleusercontent.com') {
+        if (googleBtnRef.current) {
+          googleBtnRef.current.innerHTML = '<div class="text-xs text-muted text-center p-2">Google Sign-In requires Client ID configuration</div>';
+        }
+        return;
+      }
+
       if (window.google?.accounts?.id && googleBtnRef.current) {
-        // Use client_id from meta tag or placeholder
-        const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || 'your-google-client-id.apps.googleusercontent.com';
         window.google.accounts.id.initialize({
           client_id: clientId,
           callback: async (response) => {
@@ -137,7 +146,7 @@ export default function AuthModal({ onClose, onAuthSuccess }) {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="input-paper pl-10"
+                  className="input-paper" style={{ paddingLeft: '2.5rem' }}
                   placeholder="Vanch Suryan"
                 />
               </div>
@@ -153,7 +162,7 @@ export default function AuthModal({ onClose, onAuthSuccess }) {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="input-paper pl-10"
+                className="input-paper" style={{ paddingLeft: '2.5rem' }}
                 placeholder="you@example.com"
               />
             </div>
@@ -172,7 +181,7 @@ export default function AuthModal({ onClose, onAuthSuccess }) {
                 minLength={8}
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="input-paper pl-10"
+                className="input-paper" style={{ paddingLeft: '2.5rem' }}
                 placeholder="••••••••"
               />
             </div>

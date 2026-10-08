@@ -74,6 +74,7 @@ export default function BookModal({ book, onClose, onSelectBook, onOpenStudioWit
           user_rating: data.user_rating
         });
       }
+      window.dispatchEvent(new Event('rating-updated'));
     } catch (err) {
       console.error('Error submitting rating:', err);
     } finally {

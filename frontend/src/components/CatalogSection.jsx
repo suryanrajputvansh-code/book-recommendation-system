@@ -50,14 +50,24 @@ export default function CatalogSection({
       setPersonalizedRecs(null);
       return;
     }
+    
     let isMounted = true;
-    api.getPersonalizedRecommendations(6)
-      .then((data) => {
-        if (isMounted) setPersonalizedRecs(data);
-      })
-      .catch(console.error);
+    
+    const fetchRecs = () => {
+      api.getPersonalizedRecommendations(6)
+        .then((data) => {
+          if (isMounted) setPersonalizedRecs(data);
+        })
+        .catch(console.error);
+    };
 
-    return () => { isMounted = false; };
+    fetchRecs();
+
+    window.addEventListener('rating-updated', fetchRecs);
+    return () => { 
+      isMounted = false; 
+      window.removeEventListener('rating-updated', fetchRecs);
+    };
   }, [user]);
 
   return (
