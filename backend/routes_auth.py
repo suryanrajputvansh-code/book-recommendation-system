@@ -14,7 +14,7 @@ from backend.auth import (
     get_current_user
 )
 
-router = APIRouter(prefix="/api/auth", tags=["Authentication"])
+router = APIRouter(tags=["Authentication"])
 
 
 class SignupRequest(BaseModel):
@@ -61,7 +61,8 @@ def validate_email_format(email: str) -> bool:
     return bool(re.match(email_regex, email))
 
 
-@router.post("/signup", response_model=AuthResponse)
+@router.post("/api/auth/signup", response_model=AuthResponse)
+@router.post("/auth/signup", response_model=AuthResponse)
 def signup(payload: SignupRequest, response: Response, db: Session = Depends(get_db)):
     email = payload.email.strip().lower()
     name = payload.name.strip()
@@ -102,7 +103,7 @@ def signup(payload: SignupRequest, response: Response, db: Session = Depends(get
     db.commit()
     db.refresh(user)
 
-    token = create_access_token(user.id)
+    token = create_access_token(user.id, email=user.email, name=user.name)
     set_auth_cookie(response, token)
 
     return {
@@ -111,7 +112,8 @@ def signup(payload: SignupRequest, response: Response, db: Session = Depends(get
     }
 
 
-@router.post("/login", response_model=AuthResponse)
+@router.post("/api/auth/login", response_model=AuthResponse)
+@router.post("/auth/login", response_model=AuthResponse)
 def login(payload: LoginRequest, response: Response, db: Session = Depends(get_db)):
     email = payload.email.strip().lower()
     password = payload.password
@@ -129,7 +131,7 @@ def login(payload: LoginRequest, response: Response, db: Session = Depends(get_d
             detail="Incorrect email or password. Please verify your credentials and try again."
         )
 
-    token = create_access_token(user.id)
+    token = create_access_token(user.id, email=user.email, name=user.name)
     set_auth_cookie(response, token)
 
     return {
@@ -138,7 +140,8 @@ def login(payload: LoginRequest, response: Response, db: Session = Depends(get_d
     }
 
 
-@router.post("/google", response_model=AuthResponse)
+@router.post("/api/auth/google", response_model=AuthResponse)
+@router.post("/auth/google", response_model=AuthResponse)
 def google_auth(payload: GoogleAuthRequest, response: Response, db: Session = Depends(get_db)):
     credential = payload.credential
     if not credential:
@@ -194,7 +197,7 @@ def google_auth(payload: GoogleAuthRequest, response: Response, db: Session = De
             db.commit()
             db.refresh(user)
 
-    token = create_access_token(user.id)
+    token = create_access_token(user.id, email=user.email, name=user.name)
     set_auth_cookie(response, token)
 
     return {
@@ -203,12 +206,14 @@ def google_auth(payload: GoogleAuthRequest, response: Response, db: Session = De
     }
 
 
-@router.post("/logout")
+@router.post("/api/auth/logout")
+@router.post("/auth/logout")
 def logout(response: Response):
     response.delete_cookie(key="access_token")
     return {"message": "Successfully logged out"}
 
 
-@router.get("/me", response_model=AuthResponse)
+@router.get("/api/auth/me", response_model=AuthResponse)
+@router.get("/auth/me", response_model=AuthResponse)
 def get_me(current_user: User = Depends(get_current_user)):
     return {"user": UserResponse(id=current_user.id, email=current_user.email, name=current_user.name, avatar_url=current_user.avatar_url)}
