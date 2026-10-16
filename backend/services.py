@@ -31,6 +31,9 @@ class RecommenderService:
         b_id = str(book.get("book_id", book.get("id", "")))
         book["id"] = b_id
         book["book_id"] = b_id
+        cover = str(book.get("cover_url") or book.get("image_url", ""))
+        book["cover_url"] = cover
+        book["image_url"] = cover
         return book
 
     def get_book_by_id(self, book_id: str) -> Optional[Dict[str, Any]]:

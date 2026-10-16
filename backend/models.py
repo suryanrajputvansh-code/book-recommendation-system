@@ -14,6 +14,7 @@ class BookBase(BaseModel):
     ratings_count: Optional[int] = Field(default=0, description="Number of user ratings")
     publication_year: Optional[int] = Field(default=None, description="Year of publication")
     image_url: Optional[str] = Field(default="", description="Cover image URL")
+    cover_url: Optional[str] = Field(default="", description="Cover image URL")
     description: Optional[str] = Field(default="", description="Synopsis or summary")
 
 

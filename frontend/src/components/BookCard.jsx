@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, Sparkles, BookOpen, ArrowUpRight } from 'lucide-react';
 
-export default function BookCard({ book, onSelect, onFindSimilar, isRecommendation = false }) {
+export default function BookCard({ book, onSelect, onFindSimilar, isRecommendation = false, shelfMode = false }) {
   const [imgError, setImgError] = useState(false);
 
   const genresList = book.genres
@@ -9,38 +9,47 @@ export default function BookCard({ book, onSelect, onFindSimilar, isRecommendati
     : [];
 
   const matchPercent = book.match_percentage ?? (book.similarity_score ? Math.round(book.similarity_score * 1000) / 10 : null);
+  const coverSrc = book.cover_url || book.image_url;
 
   return (
     <div 
-      className="group flex flex-col paper-panel paper-panel-hover p-3.5 sm:p-4 h-full relative cursor-pointer border border-line rounded-[4px] bg-paper-50 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+      className={`group flex flex-col relative cursor-pointer transition-all duration-300 ${
+        shelfMode 
+          ? 'items-center text-center' 
+          : 'paper-panel paper-panel-hover p-3 sm:p-3.5 h-full border border-line rounded-[6px] bg-paper-50 hover:-translate-y-1.5 hover:shadow-lg'
+      }`}
       onClick={() => onSelect(book)}
     >
-      {/* Cover container with editorial book spine effect */}
-      <div className="relative w-full aspect-[2/3] mb-3.5 book-cover rounded-[2px] overflow-hidden shadow-sm shadow-ink-900/10">
+      {/* Cover container with editorial book spine effect and realistic drop shadow */}
+      <div className={`relative w-full aspect-[2/3] book-cover rounded-r-[3px] rounded-l-[1px] overflow-hidden transition-all duration-300 ${
+        shelfMode 
+          ? 'shadow-[0_12px_20px_-3px_rgba(35,25,15,0.25)] group-hover:-translate-y-2 group-hover:shadow-[0_18px_25px_-2px_rgba(35,25,15,0.35)]' 
+          : 'mb-3 shadow-[0_4px_12px_rgba(35,25,15,0.12)] group-hover:shadow-[0_10px_20px_rgba(35,25,15,0.18)]'
+      }`}>
         {/* Book spine highlight on left edge */}
-        <div className="absolute top-0 bottom-0 left-0 w-1.5 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-2 bg-gradient-to-r from-black/30 via-black/10 to-transparent z-20 pointer-events-none" />
 
-        {!imgError && book.image_url ? (
+        {!imgError && coverSrc ? (
           <img
-            src={book.image_url}
+            src={coverSrc}
             alt={book.title}
             onError={() => setImgError(true)}
             loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
           />
         ) : (
           <div className="w-full h-full p-4 flex flex-col justify-between bg-paper-200 text-left border-b border-paper-300">
             <BookOpen className="w-6 h-6 text-ink-300" />
             <div>
-              <p className="display-font text-ink-900 text-sm line-clamp-3">{book.title}</p>
-              <p className="text-[10px] text-ink-600 mt-1 uppercase tracking-wider">{book.author}</p>
+              <p className="display-font text-ink-900 text-xs sm:text-sm font-bold line-clamp-3 leading-snug">{book.title}</p>
+              <p className="text-[10px] text-ink-600 mt-1 uppercase tracking-wider font-semibold">{book.author}</p>
             </div>
           </div>
         )}
 
         {/* Cosine Similarity Tag */}
         {matchPercent !== null && (
-          <div className="absolute top-2 right-2 px-2 py-0.5 bg-paper-50/95 border border-paper-300 text-[10px] font-bold text-ink-900 shadow-xs flex items-center gap-1 z-10">
+          <div className="absolute top-2 right-2 px-1.5 py-0.5 bg-paper-50/95 border border-paper-300 text-[10px] font-bold text-ink-900 shadow-xs flex items-center gap-1 z-10 rounded-[2px]">
             <Sparkles className="w-3 h-3 text-accent" />
             <span>{matchPercent}%</span>
           </div>
