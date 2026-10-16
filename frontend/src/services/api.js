@@ -3,6 +3,19 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 /**
  * Helper to handle fetch responses safely
  */
+function getAuthHeaders(customHeaders = {}) {
+  const headers = { ...customHeaders };
+  try {
+    const token = localStorage.getItem('bookwise_token');
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+  } catch (e) {
+    // localStorage not accessible
+  }
+  return headers;
+}
+
 async function handleResponse(response) {
   if (!response.ok) {
     let errorMessage = `HTTP Error ${response.status}: ${response.statusText}`;
@@ -107,6 +120,7 @@ export const api = {
 
   async getMe() {
     const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
+      headers: getAuthHeaders(),
       credentials: 'include'
     });
     return handleResponse(res);
@@ -115,6 +129,7 @@ export const api = {
   // --- Ratings & Personalization ---
   async getRating(bookId) {
     const res = await fetch(`${API_BASE_URL}/api/books/${encodeURIComponent(bookId)}/rating`, {
+      headers: getAuthHeaders(),
       credentials: 'include'
     });
     return handleResponse(res);
@@ -123,7 +138,7 @@ export const api = {
   async rateBook(bookId, rating) {
     const res = await fetch(`${API_BASE_URL}/api/books/${encodeURIComponent(bookId)}/rating`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
       body: JSON.stringify({ rating }),
       credentials: 'include'
     });
@@ -133,6 +148,7 @@ export const api = {
   async deleteRating(bookId) {
     const res = await fetch(`${API_BASE_URL}/api/books/${encodeURIComponent(bookId)}/rating`, {
       method: 'DELETE',
+      headers: getAuthHeaders(),
       credentials: 'include'
     });
     return handleResponse(res);
@@ -140,6 +156,7 @@ export const api = {
 
   async getMyRatings() {
     const res = await fetch(`${API_BASE_URL}/api/me/ratings`, {
+      headers: getAuthHeaders(),
       credentials: 'include'
     });
     return handleResponse(res);
@@ -148,6 +165,7 @@ export const api = {
   async getPersonalizedRecommendations(limit = 6) {
     const params = new URLSearchParams({ limit });
     const res = await fetch(`${API_BASE_URL}/api/recommendations/personalized?${params.toString()}`, {
+      headers: getAuthHeaders(),
       credentials: 'include'
     });
     return handleResponse(res);

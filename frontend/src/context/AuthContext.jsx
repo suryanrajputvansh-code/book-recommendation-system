@@ -29,6 +29,9 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     const data = await api.login({ email, password });
+    if (data.token) {
+      localStorage.setItem('bookwise_token', data.token);
+    }
     setUser(data.user);
     setShowAuthModal(false);
     return data.user;
@@ -36,6 +39,9 @@ export function AuthProvider({ children }) {
 
   const signup = async (name, email, password) => {
     const data = await api.signup({ name, email, password });
+    if (data.token) {
+      localStorage.setItem('bookwise_token', data.token);
+    }
     setUser(data.user);
     setShowAuthModal(false);
     return data.user;
@@ -43,6 +49,9 @@ export function AuthProvider({ children }) {
 
   const googleLogin = async (credential) => {
     const data = await api.googleAuth(credential);
+    if (data.token) {
+      localStorage.setItem('bookwise_token', data.token);
+    }
     setUser(data.user);
     setShowAuthModal(false);
     return data.user;
@@ -54,6 +63,7 @@ export function AuthProvider({ children }) {
     } catch (err) {
       console.error('Logout error:', err);
     } finally {
+      localStorage.removeItem('bookwise_token');
       setUser(null);
     }
   };

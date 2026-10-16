@@ -7,8 +7,9 @@
     "rating": 3.84,
     "ratings_count": 920000,
     "publication_year": 1915,
-    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/6889547-L.jpg",
     "description": "One morning, Gregor Samsa wakes from troubled dreams to find himself transformed in his bed into a monstrous insect-like creature, forcing his family to confront their isolation, alienation, and grotesque absurdity.",
+    "cover_url": "https://covers.openlibrary.org/b/id/6889547-L.jpg",
     "matrix_index": 0
   },
   {
@@ -19,8 +20,9 @@
     "rating": 3.96,
     "ratings_count": 410000,
     "publication_year": 1925,
-    "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14910748-L.jpg",
     "description": "Josef K., a respectable bank officer, is suddenly arrested and prosecuted by an inaccessible and bizarre judicial authority, with the nature of his crime never revealed to him in an impenetrable bureaucratic nightmare.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14910748-L.jpg",
     "matrix_index": 1
   },
   {
@@ -31,20 +33,22 @@
     "rating": 3.91,
     "ratings_count": 180000,
     "publication_year": 1926,
-    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12605605-L.jpg",
     "description": "A land surveyor known only as K. arrives in a snowbound village governed by an enigmatic, inaccessible bureaucracy headquartered in a castle overlooking the town.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12605605-L.jpg",
     "matrix_index": 2
   },
   {
     "book_id": "104",
     "title": "Letters to Milena",
     "author": "Franz Kafka",
-    "genres": "Romance, Philosophy, Non-Fiction, Fiction",
+    "genres": "Non-Fiction, Philosophy, Fiction, Romance",
     "rating": 4.24,
     "ratings_count": 89000,
     "publication_year": 1952,
-    "image_url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/4066124-L.jpg",
     "description": "Kafka's passionate, desperate, and agonizing love letters to Milena Jesenska, revealing his deepest psychological vulnerabilities, intellectual brilliance, and haunting self-doubts.",
+    "cover_url": "https://covers.openlibrary.org/b/id/4066124-L.jpg",
     "matrix_index": 3
   },
   {
@@ -55,8 +59,9 @@
     "rating": 3.97,
     "ratings_count": 95000,
     "publication_year": 1919,
-    "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14157-L.jpg",
     "description": "An explorer witnesses the gruesome ritual execution apparatus on an island penal colony, examining justice, cruelty, obsolete tradition, and institutional dogmatism.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14157-L.jpg",
     "matrix_index": 4
   },
   {
@@ -67,8 +72,9 @@
     "rating": 4.19,
     "ratings_count": 4200000,
     "publication_year": 1949,
-    "image_url": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8745958-L.jpg",
     "description": "Winston Smith lives in a totalitarian society monitored by the all-seeing Big Brother, where independent thought is outlawed and the Ministry of Truth rewrites history.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8745958-L.jpg",
     "matrix_index": 5
   },
   {
@@ -79,44 +85,48 @@
     "rating": 3.98,
     "ratings_count": 3100000,
     "publication_year": 1945,
-    "image_url": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11261770-L.jpg",
     "description": "A timeless allegorical novella detailing the revolution of farm animals against their human master, only to see power corrupt their new leader pig Napoleon.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11261770-L.jpg",
     "matrix_index": 6
   },
   {
     "book_id": "106",
     "title": "Homage to Catalonia",
     "author": "George Orwell",
-    "genres": "Non-Fiction, Fiction, Historical Fiction",
+    "genres": "Non-Fiction, Historical Fiction, Fiction",
     "rating": 4.16,
     "ratings_count": 140000,
     "publication_year": 1938,
-    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/7282177-L.jpg",
     "description": "Orwell's firsthand account of fighting alongside socialist and anti-fascist militia in the Spanish Civil War, experiencing revolution, trench warfare, and betrayal.",
+    "cover_url": "https://covers.openlibrary.org/b/id/7282177-L.jpg",
     "matrix_index": 7
   },
   {
     "book_id": "107",
     "title": "Down and Out in Paris and London",
     "author": "George Orwell",
-    "genres": "Classic, Non-Fiction, Fiction, Biography",
+    "genres": "Non-Fiction, Classic, Fiction, Biography",
     "rating": 4.09,
     "ratings_count": 180000,
     "publication_year": 1933,
-    "image_url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/5539329-L.jpg",
     "description": "A visceral memoir documenting extreme poverty, survival in squalid hotel kitchens in Paris, and life among tramps on the roads of London.",
+    "cover_url": "https://covers.openlibrary.org/b/id/5539329-L.jpg",
     "matrix_index": 8
   },
   {
     "book_id": "108",
     "title": "Burmese Days",
     "author": "George Orwell",
-    "genres": "Classic, Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Classic, Fiction",
     "rating": 3.86,
     "ratings_count": 85000,
     "publication_year": 1934,
-    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/5344336-L.jpg",
     "description": "Based on Orwell's years in the Indian Imperial Police in Burma, exposing the corruption, racism, and disillusionment at the tail end of the British Empire.",
+    "cover_url": "https://covers.openlibrary.org/b/id/5344336-L.jpg",
     "matrix_index": 9
   },
   {
@@ -127,8 +137,9 @@
     "rating": 4.26,
     "ratings_count": 820000,
     "publication_year": 1866,
-    "image_url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/13116014-L.jpg",
     "description": "Impoverished former student Raskolnikov commits a calculated murder in Saint Petersburg, followed by a relentless mental ordeal of guilt, fevered paranoia, and spiritual redemption.",
+    "cover_url": "https://covers.openlibrary.org/b/id/13116014-L.jpg",
     "matrix_index": 10
   },
   {
@@ -139,8 +150,9 @@
     "rating": 4.38,
     "ratings_count": 310000,
     "publication_year": 1880,
-    "image_url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11263774-L.jpg",
     "description": "A passionate philosophical novel that enters into ethical debates of God, free will, and morality through the turbulent lives of three brothers and the murder of their father.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11263774-L.jpg",
     "matrix_index": 11
   },
   {
@@ -151,8 +163,9 @@
     "rating": 4.14,
     "ratings_count": 380000,
     "publication_year": 1864,
-    "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/6908257-L.jpg",
     "description": "The cynical diary of an alienated, bitter former civil servant living in Saint Petersburg, offering a devastating critique of rational utopianism, determinism, and human spite.",
+    "cover_url": "https://covers.openlibrary.org/b/id/6908257-L.jpg",
     "matrix_index": 12
   },
   {
@@ -163,8 +176,9 @@
     "rating": 4.2,
     "ratings_count": 210000,
     "publication_year": 1869,
-    "image_url": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10249475-L.jpg",
     "description": "Prince Myshkin, a gentle, saintly, and guileless epileptic nobleman, returns to Russian society only to have his pure goodness clash tragically with corruption, jealousy, and greed.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10249475-L.jpg",
     "matrix_index": 13
   },
   {
@@ -175,20 +189,22 @@
     "rating": 4.24,
     "ratings_count": 120000,
     "publication_year": 1872,
-    "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11408459-L.jpg",
     "description": "A terrifying prophetic examination of radical revolutionary nihilism in a provincial Russian town, plotting conspiracy, murder, and moral decay.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11408459-L.jpg",
     "matrix_index": 14
   },
   {
     "book_id": "112",
     "title": "White Nights",
     "author": "Fyodor Dostoevsky",
-    "genres": "Romance, Classic",
+    "genres": "Classic, Romance",
     "rating": 4.15,
     "ratings_count": 260000,
     "publication_year": 1848,
-    "image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14598226-L.jpg",
     "description": "A lonely, dreamy narrator wanders the luminous summer twilight of Saint Petersburg and falls in unrequited love with a distressed young woman across four magical nights.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14598226-L.jpg",
     "matrix_index": 15
   },
   {
@@ -199,8 +215,9 @@
     "rating": 4.4,
     "ratings_count": 72000,
     "publication_year": 2008,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8065615-L.jpg",
     "description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Uncle Bob presents a revolutionary paradigm on how to write readable, maintainable, and robust code.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8065615-L.jpg",
     "matrix_index": 16
   },
   {
@@ -211,8 +228,9 @@
     "rating": 4.31,
     "ratings_count": 31000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/7318893-L.jpg",
     "description": "Practical advice about the discipline, standards, ethics, and practices of true software craftsmanship, from time management to estimates, coding, refactoring, and testing.",
+    "cover_url": "https://covers.openlibrary.org/b/id/7318893-L.jpg",
     "matrix_index": 17
   },
   {
@@ -223,8 +241,9 @@
     "rating": 4.54,
     "ratings_count": 89000,
     "publication_year": 1999,
-    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10143650-L.jpg",
     "description": "One of the most significant books in modern software engineering. Cuts through the increasing specialization and technicalities to examine the core process of crafting flexible and working software.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10143650-L.jpg",
     "matrix_index": 18
   },
   {
@@ -235,8 +254,9 @@
     "rating": 4.22,
     "ratings_count": 48000,
     "publication_year": 1994,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/13750918-L.jpg",
     "description": "Captures 23 classic software design patterns that solve recurring problems in object-oriented design, defining terminology and blueprints used across the computing industry.",
+    "cover_url": "https://covers.openlibrary.org/b/id/13750918-L.jpg",
     "matrix_index": 19
   },
   {
@@ -247,8 +267,9 @@
     "rating": 4.73,
     "ratings_count": 54000,
     "publication_year": 2017,
-    "image_url": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8434671-L.jpg",
     "description": "An exhaustive, indispensable deep-dive into the principles and tradeoffs of data systems, databases, distributed transactions, consensus algorithms, streaming, and batch processing.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8434671-L.jpg",
     "matrix_index": 20
   },
   {
@@ -259,8 +280,9 @@
     "rating": 4.35,
     "ratings_count": 67000,
     "publication_year": 1990,
-    "image_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/2341462-L.jpg",
     "description": "The definitive comprehensive guide and textbook covering algorithms, data structures, graph theory, dynamic programming, and computational complexity.",
+    "cover_url": "https://covers.openlibrary.org/b/id/2341462-L.jpg",
     "matrix_index": 21
   },
   {
@@ -271,8 +293,9 @@
     "rating": 4.59,
     "ratings_count": 42000,
     "publication_year": 2016,
-    "image_url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8512926-L.jpg",
     "description": "A fully illustrated, friendly guide that teaches you how to apply common algorithms to practical problems like search, sorting, graphs, and dynamic programming.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8512926-L.jpg",
     "matrix_index": 22
   },
   {
@@ -283,8 +306,9 @@
     "rating": 4.31,
     "ratings_count": 39000,
     "publication_year": 1999,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10527062-L.jpg",
     "description": "Explains the principles of refactoring software, identifying code smells, and step-by-step techniques to improve internal code structure without changing observable behavior.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10527062-L.jpg",
     "matrix_index": 23
   },
   {
@@ -295,8 +319,9 @@
     "rating": 4.3,
     "ratings_count": 35000,
     "publication_year": 1993,
-    "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/461500-L.jpg",
     "description": "Synthesizes effective software engineering practices into clear, pragmatic guidance for creating high-quality code, defensive programming, and architecture.",
+    "cover_url": "https://covers.openlibrary.org/b/id/461500-L.jpg",
     "matrix_index": 24
   },
   {
@@ -307,8 +332,9 @@
     "rating": 4.49,
     "ratings_count": 18000,
     "publication_year": 1984,
-    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/149338-L.jpg",
     "description": "The legendary MIT introductory computer science text teaching the deep conceptual foundations of computation, abstraction, interpreters, and metalinguistic abstraction using Scheme/Lisp.",
+    "cover_url": "https://covers.openlibrary.org/b/id/149338-L.jpg",
     "matrix_index": 25
   },
   {
@@ -319,8 +345,9 @@
     "rating": 4.46,
     "ratings_count": 21000,
     "publication_year": 2014,
-    "image_url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8117575-L.jpg",
     "description": "An in-depth look at JavaScript's lexical scope, lexical this, function scopes, block scopes, and closures, uncovering the exact runtime mechanics of the language.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8117575-L.jpg",
     "matrix_index": 26
   },
   {
@@ -331,8 +358,9 @@
     "rating": 4.67,
     "ratings_count": 31000,
     "publication_year": 2019,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9388208-L.jpg",
     "description": "Through concrete examples, minimal theory, and production-ready Python frameworks, this book shows you how to build intelligent systems using linear models, random forests, and deep neural networks.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9388208-L.jpg",
     "matrix_index": 27
   },
   {
@@ -343,20 +371,22 @@
     "rating": 4.39,
     "ratings_count": 14000,
     "publication_year": 2016,
-    "image_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8086288-L.jpg",
     "description": "The definitive textbook on deep learning, introducing mathematical concepts in linear algebra and probability before covering modern feedforward nets, convolutional networks, and generative models.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8086288-L.jpg",
     "matrix_index": 28
   },
   {
     "book_id": "113",
     "title": "Code: The Hidden Language of Computer Hardware and Software",
     "author": "Charles Petzold",
-    "genres": "Computer Science, Historical Fiction",
+    "genres": "Historical Fiction, Computer Science",
     "rating": 4.68,
     "ratings_count": 45000,
     "publication_year": 1999,
-    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9255229-L.jpg",
     "description": "A brilliant, poetic, and accessible journey through flashlights, telegraphs, logic gates, binary relays, and microprocessors to show how humans created modern computers from simple mechanisms.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9255229-L.jpg",
     "matrix_index": 29
   },
   {
@@ -367,8 +397,9 @@
     "rating": 4.7,
     "ratings_count": 28000,
     "publication_year": 2003,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12475555-L.jpg",
     "description": "Explains the underlying hardware, machine-level representations, compiler optimizations, processor architectures, memory hierarchies, virtual memory, and system-level I/O from a programmer's viewpoint.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12475555-L.jpg",
     "matrix_index": 30
   },
   {
@@ -379,8 +410,9 @@
     "rating": 4.72,
     "ratings_count": 19000,
     "publication_year": 2018,
-    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/302591-L.jpg",
     "description": "An engaging and rigorous textbook dissecting the fundamental pillars of operating systems: virtualization (CPU and memory), concurrency (threads and locks), and persistence (file systems and RAID).",
+    "cover_url": "https://covers.openlibrary.org/b/id/302591-L.jpg",
     "matrix_index": 31
   },
   {
@@ -391,8 +423,9 @@
     "rating": 4.62,
     "ratings_count": 36000,
     "publication_year": 2020,
-    "image_url": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11916707-L.jpg",
     "description": "A visual and practical roadmap with real-world architectural blueprints for scaling systems: rate limiters, key-value stores, distributed message queues, chat systems, search indexers, and YouTube-scale CDNs.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11916707-L.jpg",
     "matrix_index": 32
   },
   {
@@ -403,8 +436,9 @@
     "rating": 4.65,
     "ratings_count": 12000,
     "publication_year": 2019,
-    "image_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14572292-L.jpg",
     "description": "Examines the low-level engine mechanics of modern relational and NoSQL storage systems: B-trees, LSM-trees, write-ahead logs, Raft consensus, two-phase commit, and distributed coordination.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14572292-L.jpg",
     "matrix_index": 33
   },
   {
@@ -415,8 +449,9 @@
     "rating": 4.52,
     "ratings_count": 52000,
     "publication_year": 1995,
-    "image_url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/92018-L.jpg",
     "description": "The world's leading universal textbook on artificial intelligence, introducing rational agents, heuristic search, constraint satisfaction, probabilistic reasoning, reinforcement learning, and neural nets.",
+    "cover_url": "https://covers.openlibrary.org/b/id/92018-L.jpg",
     "matrix_index": 34
   },
   {
@@ -427,8 +462,9 @@
     "rating": 4.74,
     "ratings_count": 29000,
     "publication_year": 2015,
-    "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8743408-L.jpg",
     "description": "Takes you on a journey through Python's unique data model, dunder methods, generators, coroutines with asyncio, meta-programming, and modern type hints to write truly Pythonic code.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8743408-L.jpg",
     "matrix_index": 35
   },
   {
@@ -439,20 +475,22 @@
     "rating": 4.78,
     "ratings_count": 21000,
     "publication_year": 2018,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8508621-L.jpg",
     "description": "The official guide to Rust, teaching ownership, borrowing, lifetimes, fearless concurrency, smart pointers, cargo packaging, and zero-cost abstractions.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8508621-L.jpg",
     "matrix_index": 36
   },
   {
     "book_id": "121",
     "title": "The Mythical Man-Month: Essays on Software Engineering",
     "author": "Frederick P. Brooks Jr.",
-    "genres": "Computer Science, Classic",
+    "genres": "Classic, Computer Science",
     "rating": 4.15,
     "ratings_count": 68000,
     "publication_year": 1975,
-    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/6915361-L.jpg",
     "description": "Few books on software project management have been as influential. Brooks shares timeless wisdom on team communication, the 'second-system effect', and why adding manpower to a late software project makes it later.",
+    "cover_url": "https://covers.openlibrary.org/b/id/6915361-L.jpg",
     "matrix_index": 37
   },
   {
@@ -463,56 +501,61 @@
     "rating": 4.29,
     "ratings_count": 24000,
     "publication_year": 1986,
-    "image_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/134087-L.jpg",
     "description": "The landmark classic on compiler design, lexing, parsing, syntax-directed translation, intermediate code generation, and instruction optimization.",
+    "cover_url": "https://covers.openlibrary.org/b/id/134087-L.jpg",
     "matrix_index": 38
   },
   {
     "book_id": "1",
     "title": "Dune",
     "author": "Frank Herbert",
-    "genres": "Classic, Science Fiction, Fiction, Fantasy",
+    "genres": "Science Fiction, Classic, Fiction, Fantasy",
     "rating": 4.26,
     "ratings_count": 1250000,
     "publication_year": 1965,
-    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11481354-L.jpg",
     "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the spice melange, a drug capable of extending life and enhancing consciousness.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11481354-L.jpg",
     "matrix_index": 39
   },
   {
     "book_id": "2",
     "title": "Dune Messiah",
     "author": "Frank Herbert",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 3.92,
     "ratings_count": 310000,
     "publication_year": 1969,
-    "image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/980253-L.jpg",
     "description": "Twelve years after the events of Dune, Paul Atreides has become Emperor of the known universe, but a deadly conspiracy threatens his reign, religion, and the fate of humanity.",
+    "cover_url": "https://covers.openlibrary.org/b/id/980253-L.jpg",
     "matrix_index": 40
   },
   {
     "book_id": "3",
     "title": "Foundation",
     "author": "Isaac Asimov",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 4.18,
     "ratings_count": 480000,
     "publication_year": 1951,
-    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14612610-L.jpg",
     "description": "The story of Hari Seldon and his psychohistory, a mathematical science capable of predicting the behavior of mass populations, and his Foundation established to preserve human knowledge during the Galactic Empire's collapse.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14612610-L.jpg",
     "matrix_index": 41
   },
   {
     "book_id": "4",
     "title": "Foundation and Empire",
     "author": "Isaac Asimov",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 4.23,
     "ratings_count": 210000,
     "publication_year": 1952,
-    "image_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9300695-L.jpg",
     "description": "The Foundation battles the remnants of the Galactic Empire, only to face an unexpected threat: the mysterious mutant warlord known as the Mule.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9300695-L.jpg",
     "matrix_index": 42
   },
   {
@@ -523,8 +566,9 @@
     "rating": 4.24,
     "ratings_count": 220000,
     "publication_year": 1989,
-    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/380332-L.jpg",
     "description": "On the world called Hyperion, beyond the reach of galactic law, seven pilgrims share their interwoven tales as they journey to the mysterious Time Tombs guarded by the lethal creature called the Shrike.",
+    "cover_url": "https://covers.openlibrary.org/b/id/380332-L.jpg",
     "matrix_index": 43
   },
   {
@@ -535,8 +579,9 @@
     "rating": 3.9,
     "ratings_count": 340000,
     "publication_year": 1984,
-    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/283860-L.jpg",
     "description": "Case was the sharpest data-thief in the matrix until an ex-employer crippled his nervous system. Now a mysterious employer recruits him for a high-stakes hack against an unthinkably powerful artificial intelligence.",
+    "cover_url": "https://covers.openlibrary.org/b/id/283860-L.jpg",
     "matrix_index": 44
   },
   {
@@ -547,8 +592,9 @@
     "rating": 4.03,
     "ratings_count": 290000,
     "publication_year": 1992,
-    "image_url": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/392508-L.jpg",
     "description": "In reality, Hiro Protagonist delivers pizza for Uncle Enzo's CosoNostra Pizza. In the Metaverse, he is a warrior prince racing to stop a computer virus capable of infecting the human brain.",
+    "cover_url": "https://covers.openlibrary.org/b/id/392508-L.jpg",
     "matrix_index": 45
   },
   {
@@ -559,8 +605,9 @@
     "rating": 4.41,
     "ratings_count": 980000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11447888-L.jpg",
     "description": "Six days ago, astronaut Mark Watney became one of the first people to walk on Mars. Now, he's sure he'll be the first person to die there after a dust storm separates him from his crew.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11447888-L.jpg",
     "matrix_index": 46
   },
   {
@@ -571,8 +618,9 @@
     "rating": 4.52,
     "ratings_count": 450000,
     "publication_year": 2021,
-    "image_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11200092-L.jpg",
     "description": "Ryland Grace is the sole survivor on a desperate, last-chance mission—and if he fails, humanity and the earth itself will perish. Except right now, he doesn't even remember his own name.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11200092-L.jpg",
     "matrix_index": 47
   },
   {
@@ -583,8 +631,9 @@
     "rating": 4.08,
     "ratings_count": 320000,
     "publication_year": 2008,
-    "image_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10526598-L.jpg",
     "description": "Set against the backdrop of China's Cultural Revolution, a secret military project sends signals into space to establish contact with aliens, leading to catastrophic consequences for Earth.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10526598-L.jpg",
     "matrix_index": 48
   },
   {
@@ -595,80 +644,87 @@
     "rating": 4.41,
     "ratings_count": 180000,
     "publication_year": 2008,
-    "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10526598-L.jpg",
     "description": "Humanity reels from the revelation of an incoming alien invasion force, deploying Wallfacers—individuals given immense resources to craft secret defense strategies hidden from alien observation.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10526598-L.jpg",
     "matrix_index": 49
   },
   {
     "book_id": "12",
     "title": "Ender's Game",
     "author": "Orson Scott Card",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 4.3,
     "ratings_count": 1300000,
     "publication_year": 1985,
-    "image_url": "https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12996033-L.jpg",
     "description": "In order to develop a secure defense against a hostile alien race's next attack, government agencies breed child prodigies and train them as military commanders in zero-gravity battle simulations.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12996033-L.jpg",
     "matrix_index": 50
   },
   {
     "book_id": "13",
     "title": "Do Androids Dream of Electric Sheep?",
     "author": "Philip K. Dick",
-    "genres": "Philosophy, Science Fiction, Fiction",
+    "genres": "Science Fiction, Philosophy, Fiction",
     "rating": 4.09,
     "ratings_count": 460000,
     "publication_year": 1968,
-    "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/207515-L.jpg",
     "description": "By 2021, the World War has killed millions, driving entire species into extinction. Bounty hunter Rick Deckard stalks rogue Nexus-6 androids through the radioactive ruins of San Francisco.",
+    "cover_url": "https://covers.openlibrary.org/b/id/207515-L.jpg",
     "matrix_index": 51
   },
   {
     "book_id": "14",
     "title": "Solaris",
     "author": "Stanislaw Lem",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 4.0,
     "ratings_count": 120000,
     "publication_year": 1961,
-    "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12313764-L.jpg",
     "description": "Psychologist Kris Kelvin arrives on a space station studying the living plasma ocean of Solaris, discovering that the planet is capable of dredging up humans' deepest suppressed memories and manifesting them physically.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12313764-L.jpg",
     "matrix_index": 52
   },
   {
     "book_id": "15",
     "title": "The Left Hand of Darkness",
     "author": "Ursula K. Le Guin",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 4.08,
     "ratings_count": 190000,
     "publication_year": 1969,
-    "image_url": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10618463-L.jpg",
     "description": "A human envoy called Genly Ai is sent to Gethen, an icy world whose inhabitants can choose and change their gender, exploring themes of psychology, sociology, politics, and humanity.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10618463-L.jpg",
     "matrix_index": 53
   },
   {
     "book_id": "16",
     "title": "Fahrenheit 451",
     "author": "Ray Bradbury",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 3.99,
     "ratings_count": 1980000,
     "publication_year": 1953,
-    "image_url": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12993656-L.jpg",
     "description": "Guy Montag is a fireman whose job is to burn books, which are forbidden by law. But when he meets an eccentric young neighbor, he begins questioning everything he has been taught.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12993656-L.jpg",
     "matrix_index": 54
   },
   {
     "book_id": "17",
     "title": "Brave New World",
     "author": "Aldous Huxley",
-    "genres": "Philosophy, Science Fiction, Fiction, Classic",
+    "genres": "Science Fiction, Philosophy, Classic, Fiction",
     "rating": 3.99,
     "ratings_count": 1850000,
     "publication_year": 1932,
-    "image_url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8231823-L.jpg",
     "description": "A dark vision of a futuristic society governed by consumerism, genetic caste engineering, and psychological conditioning where pain and sorrow are eradicated by the drug soma.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8231823-L.jpg",
     "matrix_index": 55
   },
   {
@@ -679,8 +735,9 @@
     "rating": 4.29,
     "ratings_count": 3400000,
     "publication_year": 1937,
-    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14627509-L.jpg",
     "description": "Bilbo Baggins, a comfortable and unambitious hobbit, is swept away on a dangerous quest by the wizard Gandalf and thirteen dwarves to reclaim the Lonely Mountain and its treasure from the dragon Smaug.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14627509-L.jpg",
     "matrix_index": 56
   },
   {
@@ -691,8 +748,9 @@
     "rating": 4.38,
     "ratings_count": 2600000,
     "publication_year": 1954,
-    "image_url": "https://images.unsplash.com/photo-1463320726281-696a485928c7?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14627060-L.jpg",
     "description": "Frodo Baggins inherits the One Ring of Power forged by the Dark Lord Sauron. To save Middle-earth from darkness, Frodo and a fellowship of companions must embark on a treacherous journey to destroy it in Mount Doom.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14627060-L.jpg",
     "matrix_index": 57
   },
   {
@@ -703,8 +761,9 @@
     "rating": 4.46,
     "ratings_count": 1800000,
     "publication_year": 1954,
-    "image_url": "https://images.unsplash.com/photo-1514894780887-121968d00567?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14627564-L.jpg",
     "description": "The Fellowship is scattered across Middle-earth. Aragorn, Legolas, and Gimli rally the kingdoms of men against Saruman's armies, while Frodo and Sam guided by Gollum trek toward Mordor.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14627564-L.jpg",
     "matrix_index": 58
   },
   {
@@ -715,8 +774,9 @@
     "rating": 4.54,
     "ratings_count": 1900000,
     "publication_year": 1955,
-    "image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14627062-L.jpg",
     "description": "The climactic war for Middle-earth reaches its peak at the Battle of the Pelennor Fields as Frodo and Sam navigate the horrors of Mordor to cast the Ring into the fire.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14627062-L.jpg",
     "matrix_index": 59
   },
   {
@@ -727,8 +787,9 @@
     "rating": 4.51,
     "ratings_count": 820000,
     "publication_year": 2007,
-    "image_url": "https://images.unsplash.com/photo-1532012164546-f432f2e3edd3?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11480483-L.jpg",
     "description": "The tale of Kvothe, from his childhood in a troupe of traveling players to his years as a near-feral orphan in a crime-riddled city, to his daring brazen entrance into a legendary school of high magic.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11480483-L.jpg",
     "matrix_index": 60
   },
   {
@@ -739,8 +800,9 @@
     "rating": 4.66,
     "ratings_count": 410000,
     "publication_year": 2010,
-    "image_url": "https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14658316-L.jpg",
     "description": "Roshar is a world of stone and storms. Centuries have passed since the fall of the ten consecrated orders known as the Knights Radiant, but their Shardblades and Shardplate remain, coveted weapons in endless war.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14658316-L.jpg",
     "matrix_index": 61
   },
   {
@@ -751,8 +813,9 @@
     "rating": 4.76,
     "ratings_count": 310000,
     "publication_year": 2014,
-    "image_url": "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14658334-L.jpg",
     "description": "Kaladin must protect the king while mastering the powers of a Windrunner, Shallan strives to prevent the return of the Voidbringers, and the Parshendi gamble everything on a forbidden magic.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14658334-L.jpg",
     "matrix_index": 62
   },
   {
@@ -763,8 +826,9 @@
     "rating": 4.47,
     "ratings_count": 620000,
     "publication_year": 2006,
-    "image_url": "https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14658160-L.jpg",
     "description": "In a world where ash falls from the sky and mist dominates the night, a charismatic thief named Kelsier recruits an orphan named Vin into a crew planning the impossible: overthrowing the immortal Lord Ruler.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14658160-L.jpg",
     "matrix_index": 63
   },
   {
@@ -775,44 +839,48 @@
     "rating": 4.44,
     "ratings_count": 2400000,
     "publication_year": 1996,
-    "image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9269962-L.jpg",
     "description": "Summers span decades and winter can last a lifetime. Noble houses clash in a bitter struggle for the Iron Throne of Westeros while an ancient menace stirs in the frozen north.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9269962-L.jpg",
     "matrix_index": 64
   },
   {
     "book_id": "35",
     "title": "The Girl with the Dragon Tattoo",
     "author": "Stieg Larsson",
-    "genres": "Thriller, Mystery",
+    "genres": "Mystery, Thriller",
     "rating": 4.16,
     "ratings_count": 2900000,
     "publication_year": 2005,
-    "image_url": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9274740-L.jpg",
     "description": "Disgraced journalist Mikael Blomkvist and brilliant, rebellious computer hacker Lisbeth Salander investigate the forty-year-old disappearance of Harriet Vanger from a wealthy Swedish dynasty.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9274740-L.jpg",
     "matrix_index": 65
   },
   {
     "book_id": "37",
     "title": "Gone Girl",
     "author": "Gillian Flynn",
-    "genres": "Thriller, Mystery",
+    "genres": "Mystery, Thriller",
     "rating": 4.12,
     "ratings_count": 2700000,
     "publication_year": 2012,
-    "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8368314-L.jpg",
     "description": "On the morning of their fifth wedding anniversary, Amy Dunne suddenly disappears. Under intense police pressure and media frenzy, her husband Nick becomes the primary suspect in a maze of deception.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8368314-L.jpg",
     "matrix_index": 66
   },
   {
     "book_id": "39",
     "title": "The Silent Patient",
     "author": "Alex Michaelides",
-    "genres": "Thriller, Mystery",
+    "genres": "Mystery, Thriller",
     "rating": 4.18,
     "ratings_count": 1400000,
     "publication_year": 2019,
-    "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9407338-L.jpg",
     "description": "Alicia Berenson's life is seemingly perfect. One evening she shoots her husband five times in the face and never speaks another word. Psychotherapist Theo Faber is determined to unravel her secret.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9407338-L.jpg",
     "matrix_index": 67
   },
   {
@@ -823,44 +891,48 @@
     "rating": 4.29,
     "ratings_count": 1100000,
     "publication_year": 1939,
-    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/11172296-L.jpg",
     "description": "Ten strangers are lured to an isolated island mansion off the Devon coast by a mysterious host. One by one, they are marked for death according to a sinister nursery rhyme.",
+    "cover_url": "https://covers.openlibrary.org/b/id/11172296-L.jpg",
     "matrix_index": 68
   },
   {
     "book_id": "47",
     "title": "To Kill a Mockingbird",
     "author": "Harper Lee",
-    "genres": "Classic, Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Classic, Fiction",
     "rating": 4.26,
     "ratings_count": 5200000,
     "publication_year": 1960,
-    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14351077-L.jpg",
     "description": "Set in the American South during the Depression, young Scout Finch watches her father Atticus defend a Black man falsely accused of raping a white woman, examining racism and morality.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14351077-L.jpg",
     "matrix_index": 69
   },
   {
     "book_id": "48",
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
-    "genres": "Romance, Classic, Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Classic, Fiction, Romance",
     "rating": 3.93,
     "ratings_count": 4800000,
     "publication_year": 1925,
-    "image_url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10590366-L.jpg",
     "description": "The tragic story of Jay Gatsby, a mysterious millionaire with an obsession for the beautiful Daisy Buchanan, exploring the decadence and disillusionment of the Jazz Age.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10590366-L.jpg",
     "matrix_index": 70
   },
   {
     "book_id": "49",
     "title": "Pride and Prejudice",
     "author": "Jane Austen",
-    "genres": "Romance, Classic, Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Classic, Fiction, Romance",
     "rating": 4.28,
     "ratings_count": 3900000,
     "publication_year": 1813,
-    "image_url": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14348537-L.jpg",
     "description": "Elizabeth Bennet navigates manners, social hierarchy, and matrimony in 19th-century England, clashing with the proud and enigmatic aristocrat Mr. Darcy.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14348537-L.jpg",
     "matrix_index": 71
   },
   {
@@ -871,8 +943,9 @@
     "rating": 4.11,
     "ratings_count": 920000,
     "publication_year": 1967,
-    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12627383-L.jpg",
     "description": "The multi-generational story of the Buendia family in the mythical Colombian town of Macondo, blending historical reality with wondrous supernatural and magical realism.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12627383-L.jpg",
     "matrix_index": 72
   },
   {
@@ -883,8 +956,9 @@
     "rating": 3.8,
     "ratings_count": 3200000,
     "publication_year": 1951,
-    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9273490-L.jpg",
     "description": "Holden Caulfield wanders New York City for three days after being expelled from prep school, venting his frustrations about phoniness, alienation, and lost childhood innocence.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9273490-L.jpg",
     "matrix_index": 73
   },
   {
@@ -895,32 +969,35 @@
     "rating": 4.12,
     "ratings_count": 1300000,
     "publication_year": 1890,
-    "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/14314858-L.jpg",
     "description": "Enthralled by his own youth and beauty, Dorian Gray sells his soul so that his portrait ages and bears the scars of his sins while he remains outwardly ageless and pure.",
+    "cover_url": "https://covers.openlibrary.org/b/id/14314858-L.jpg",
     "matrix_index": 74
   },
   {
     "book_id": "55",
     "title": "Frankenstein",
     "author": "Mary Shelley",
-    "genres": "Classic, Science Fiction, Fiction",
+    "genres": "Science Fiction, Classic, Fiction",
     "rating": 3.86,
     "ratings_count": 1400000,
     "publication_year": 1818,
-    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12356249-L.jpg",
     "description": "Victor Frankenstein breathes life into a creature made of scavenged corpse parts, only to be horrified by what he created as the creature seeks vengeance for abandonment.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12356249-L.jpg",
     "matrix_index": 75
   },
   {
     "book_id": "70",
     "title": "Sapiens: A Brief History of Humankind",
     "author": "Yuval Noah Harari",
-    "genres": "Philosophy, Non-Fiction, Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Non-Fiction, Philosophy, Fiction",
     "rating": 4.37,
     "ratings_count": 1600000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8634250-L.jpg",
     "description": "From the cognitive revolution seventy thousand years ago to the genetic engineering revolution today, Harari explores how biology and history have defined what it means to be human.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8634250-L.jpg",
     "matrix_index": 76
   },
   {
@@ -931,8 +1008,9 @@
     "rating": 4.39,
     "ratings_count": 2100000,
     "publication_year": 2018,
-    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12539702-L.jpg",
     "description": "A comprehensive framework for improving every day. James Clear reveals how minute changes compound into remarkable results through habit loops, cues, craving, and environmental design.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12539702-L.jpg",
     "matrix_index": 77
   },
   {
@@ -943,20 +1021,22 @@
     "rating": 4.19,
     "ratings_count": 680000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/13290711-L.jpg",
     "description": "Nobel laureate Daniel Kahneman explains the two systems that drive the way we think: System 1 (fast, intuitive, and emotional) and System 2 (slower, more deliberative, and more logical).",
+    "cover_url": "https://covers.openlibrary.org/b/id/13290711-L.jpg",
     "matrix_index": 78
   },
   {
     "book_id": "77",
     "title": "Meditations",
     "author": "Marcus Aurelius",
-    "genres": "Philosophy, Non-Fiction, Fiction, Classic",
+    "genres": "Non-Fiction, Philosophy, Classic, Fiction",
     "rating": 4.27,
     "ratings_count": 420000,
     "publication_year": 180,
-    "image_url": "https://images.unsplash.com/photo-1463320726281-696a485928c7?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/13202688-L.jpg",
     "description": "The private journal entries of the Roman Emperor Marcus Aurelius, offering timeless Stoic reflections on duty, mortality, resilience, and inner tranquility.",
+    "cover_url": "https://covers.openlibrary.org/b/id/13202688-L.jpg",
     "matrix_index": 79
   },
   {
@@ -967,8 +1047,9 @@
     "rating": 4.41,
     "ratings_count": 520000,
     "publication_year": 2020,
-    "image_url": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10389354-L.jpg",
     "description": "Doing well with money isn't necessarily about what you know. It's about how you behave. Morgan Housel shares 19 short stories exploring the strange ways people think about money.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10389354-L.jpg",
     "matrix_index": 80
   },
   {
@@ -979,32 +1060,35 @@
     "rating": 4.02,
     "ratings_count": 1800000,
     "publication_year": 2020,
-    "image_url": "https://images.unsplash.com/photo-1532012164546-f432f2e3edd3?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10313767-L.jpg",
     "description": "Between life and death there is a library where every book provides a chance to try another life you could have lived. Nora Seed discovers what makes life truly fulfilling.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10313767-L.jpg",
     "matrix_index": 81
   },
   {
     "book_id": "84",
     "title": "Where the Crawdads Sing",
     "author": "Delia Owens",
-    "genres": "Romance, Historical Fiction, Fiction, Mystery",
+    "genres": "Historical Fiction, Fiction, Mystery, Romance",
     "rating": 4.41,
     "ratings_count": 3100000,
     "publication_year": 2018,
-    "image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8362947-L.jpg",
     "description": "For years, rumors of the 'Marsh Girl' haunted Barkley Cove. When handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the barefoot marsh girl who survived alone.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8362947-L.jpg",
     "matrix_index": 82
   },
   {
     "book_id": "88",
     "title": "The Song of Achilles",
     "author": "Madeline Miller",
-    "genres": "Romance, Fiction, Fantasy, Historical Fiction",
+    "genres": "Historical Fiction, Fiction, Fantasy, Romance",
     "rating": 4.34,
     "ratings_count": 1700000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/7098465-L.jpg",
     "description": "A breathtaking retelling of the Trojan War focusing on the profound, tender bond between awkward prince Patroclus and the glorious demigod Achilles.",
+    "cover_url": "https://covers.openlibrary.org/b/id/7098465-L.jpg",
     "matrix_index": 83
   },
   {
@@ -1015,44 +1099,48 @@
     "rating": 3.82,
     "ratings_count": 390000,
     "publication_year": 2021,
-    "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10648686-L.jpg",
     "description": "From Nobel Prize laureate Kazuo Ishiguro, the story of Klara, an Artificial Friend with outstanding observational qualities, who watches the customers from a store window, hoping to be chosen.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10648686-L.jpg",
     "matrix_index": 84
   },
   {
     "book_id": "201",
     "title": "Rebecca",
     "author": "Daphne du Maurier",
-    "genres": "Thriller, Classic, Mystery",
+    "genres": "Classic, Mystery, Thriller",
     "rating": 4.22,
     "ratings_count": 420000,
     "publication_year": 1938,
-    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8238729-L.jpg",
     "description": "A young woman marries the wealthy widower Maxim de Winter and moves into his grand estate Manderley, only to feel overshadowed by the memory of his first wife. As secrets buried in the house begin to surface, the narrator must reckon with a past far darker than she imagined.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8238729-L.jpg",
     "matrix_index": 85
   },
   {
     "book_id": "202",
     "title": "Jane Eyre",
     "author": "Charlotte Brontë",
-    "genres": "Romance, Classic",
+    "genres": "Classic, Romance",
     "rating": 4.13,
     "ratings_count": 1600000,
     "publication_year": 1847,
-    "image_url": "https://images.unsplash.com/photo-1533709752211-118fcaf03312?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8235363-L.jpg",
     "description": "Orphaned Jane Eyre finds work as a governess at Thornfield Hall and falls in love with its brooding owner, Mr. Rochester — only to discover a terrible secret locked in the attic. The novel explores moral independence, class injustice, and what it means for a woman to forge her own identity.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8235363-L.jpg",
     "matrix_index": 86
   },
   {
     "book_id": "203",
     "title": "Wuthering Heights",
     "author": "Emily Brontë",
-    "genres": "Romance, Classic",
+    "genres": "Classic, Romance",
     "rating": 3.86,
     "ratings_count": 1300000,
     "publication_year": 1847,
-    "image_url": "https://images.unsplash.com/photo-1476275466078-4cdc8f858d1e?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12818862-L.jpg",
     "description": "Heathcliff, a foundling taken in by the Earnshaw family, and Catherine, the daughter he loves, are torn apart by class and circumstance on the Yorkshire moors. Their thwarted obsession twists across two generations, making Wuthering Heights one of literature's most unsettling love stories.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12818862-L.jpg",
     "matrix_index": 87
   },
   {
@@ -1063,20 +1151,22 @@
     "rating": 4.17,
     "ratings_count": 680000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/12374726-L.jpg",
     "description": "Based on over forty interviews with Jobs himself, this biography traces the mercurial genius who co-founded Apple, was ousted from it, and returned to build the most valuable company on earth. Isaacson examines how Jobs's obsession with beauty and perfectionism shaped the products that redefined entire industries.",
+    "cover_url": "https://covers.openlibrary.org/b/id/12374726-L.jpg",
     "matrix_index": 88
   },
   {
     "book_id": "205",
     "title": "The Diary of a Young Girl",
     "author": "Anne Frank",
-    "genres": "Non-Fiction, Fiction, Biography, Historical Fiction",
+    "genres": "Non-Fiction, Historical Fiction, Fiction, Biography",
     "rating": 4.18,
     "ratings_count": 3100000,
     "publication_year": 1947,
-    "image_url": "https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/13526331-L.jpg",
     "description": "Written while hiding with her family in a concealed apartment in Nazi-occupied Amsterdam, Anne Frank's diary captures the interior life of a perceptive teenager confronting fear, boredom, and the desire to matter in the world. It remains one of the most widely read first-person accounts of the Holocaust.",
+    "cover_url": "https://covers.openlibrary.org/b/id/13526331-L.jpg",
     "matrix_index": 89
   },
   {
@@ -1087,44 +1177,48 @@
     "rating": 4.47,
     "ratings_count": 960000,
     "publication_year": 2018,
-    "image_url": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8314077-L.jpg",
     "description": "Tara Westover grew up in rural Idaho under a survivalist father who kept his children out of school and off the grid. Through self-study she eventually earned a Cambridge PhD, yet her memoir is less about education's triumph than about the cost of separating oneself from family and the stories we were given.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8314077-L.jpg",
     "matrix_index": 90
   },
   {
     "book_id": "207",
     "title": "The Pillars of the Earth",
     "author": "Ken Follett",
-    "genres": "Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Fiction",
     "rating": 4.33,
     "ratings_count": 730000,
     "publication_year": 1989,
-    "image_url": "https://images.unsplash.com/photo-1548625149-720754952a04?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/9269909-L.jpg",
     "description": "Set in twelfth-century England, this epic follows the construction of a cathedral in the fictional town of Kingsbridge amid war, treachery, and religious conflict. Follett weaves together generations of characters — builders, priests, nobles, and outlaws — into a vast narrative about ambition and faith.",
+    "cover_url": "https://covers.openlibrary.org/b/id/9269909-L.jpg",
     "matrix_index": 91
   },
   {
     "book_id": "208",
     "title": "Wolf Hall",
     "author": "Hilary Mantel",
-    "genres": "Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Fiction",
     "rating": 3.9,
     "ratings_count": 300000,
     "publication_year": 2009,
-    "image_url": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8345848-L.jpg",
     "description": "Hilary Mantel's Booker Prize–winning novel inhabits the mind of Thomas Cromwell as he navigates the lethal politics of Henry VIII's court. Told in intimate, present-tense prose, it reimagines Tudor power as a chess game in which one wrong move means death.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8345848-L.jpg",
     "matrix_index": 92
   },
   {
     "book_id": "209",
     "title": "Anna Karenina",
     "author": "Leo Tolstoy",
-    "genres": "Romance, Classic, Fiction, Historical Fiction",
+    "genres": "Historical Fiction, Classic, Fiction, Romance",
     "rating": 4.02,
     "ratings_count": 560000,
     "publication_year": 1878,
-    "image_url": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/2560652-L.jpg",
     "description": "Tolstoy traces the parallel stories of Anna Karenina — whose passionate affair with Count Vronsky leads to social ruin — and the landowner Levin, whose quiet search for meaning and moral purpose offers a counterweight to Anna's tragedy. The novel is a vast portrait of Russian society and the price of living honestly.",
+    "cover_url": "https://covers.openlibrary.org/b/id/2560652-L.jpg",
     "matrix_index": 93
   },
   {
@@ -1135,20 +1229,22 @@
     "rating": 3.97,
     "ratings_count": 1200000,
     "publication_year": 2008,
-    "image_url": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10021591-L.jpg",
     "description": "Gladwell argues that exceptional achievement is less about raw talent than about timing, cultural legacy, and ten thousand hours of deliberate practice. He draws on hockey leagues, Beatles gigs, and software billionaires to show that the stories we tell about success systematically erase the conditions that made it possible.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10021591-L.jpg",
     "matrix_index": 94
   },
   {
     "book_id": "211",
     "title": "The Girl on the Train",
     "author": "Paula Hawkins",
-    "genres": "Thriller, Mystery",
+    "genres": "Mystery, Thriller",
     "rating": 3.88,
     "ratings_count": 2200000,
     "publication_year": 2015,
-    "image_url": "https://images.unsplash.com/photo-1448630360428-65456885c650?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/7350360-L.jpg",
     "description": "Rachel Watson rides the same commuter train every morning and has grown obsessed with a couple she watches from the window — until the woman disappears. Told by three narrators whose accounts contradict each other, the novel turns unreliable memory itself into a kind of mystery.",
+    "cover_url": "https://covers.openlibrary.org/b/id/7350360-L.jpg",
     "matrix_index": 95
   },
   {
@@ -1159,44 +1255,48 @@
     "rating": 4.23,
     "ratings_count": 650000,
     "publication_year": 2001,
-    "image_url": "https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/10107644-L.jpg",
     "description": "In post-war Barcelona, a young boy discovers a novel by the forgotten author Julián Carax, only to find that someone is systematically destroying every copy of his work. The search for Carax becomes an obsession that entwines two lives across decades of love, war, and literary mystery.",
+    "cover_url": "https://covers.openlibrary.org/b/id/10107644-L.jpg",
     "matrix_index": 96
   },
   {
     "book_id": "213",
     "title": "Big Little Lies",
     "author": "Liane Moriarty",
-    "genres": "Thriller, Mystery",
+    "genres": "Mystery, Thriller",
     "rating": 4.11,
     "ratings_count": 880000,
     "publication_year": 2014,
-    "image_url": "https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/7352410-L.jpg",
     "description": "Three women at a primary school trivia night — a murder has occurred, but the question is who did it and who deserved it. Moriarty's novel skewers the performance of perfect suburban life while building genuine tension about the violence hidden beneath it.",
+    "cover_url": "https://covers.openlibrary.org/b/id/7352410-L.jpg",
     "matrix_index": 97
   },
   {
     "book_id": "214",
     "title": "Beyond Good and Evil",
     "author": "Friedrich Nietzsche",
-    "genres": "Philosophy, Non-Fiction, Fiction",
+    "genres": "Non-Fiction, Philosophy, Fiction",
     "rating": 4.05,
     "ratings_count": 140000,
     "publication_year": 1886,
-    "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8245356-L.jpg",
     "description": "Nietzsche turns his critical eye on the philosophical tradition itself, arguing that conventional morality is a form of herd instinct that suppresses genuine greatness. The book challenges the reader to question the assumptions underlying concepts of good, evil, truth, and the will to power.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8245356-L.jpg",
     "matrix_index": 98
   },
   {
     "book_id": "215",
     "title": "The Night Circus",
     "author": "Erin Morgenstern",
-    "genres": "Romance, Fantasy",
+    "genres": "Fantasy, Romance",
     "rating": 4.04,
     "ratings_count": 920000,
     "publication_year": 2011,
-    "image_url": "https://images.unsplash.com/photo-1580196969807-cc6de06c05be?w=500&auto=format&fit=crop&q=60",
+    "image_url": "https://covers.openlibrary.org/b/id/8773134-L.jpg",
     "description": "Two young magicians, Celia and Marco, are trained since childhood as competitors in a mysterious game that plays out inside a magical black-and-white circus that appears only at night. As they fall in love, they realise the game has rules neither of them were told and a cost neither anticipated.",
+    "cover_url": "https://covers.openlibrary.org/b/id/8773134-L.jpg",
     "matrix_index": 99
   }
 ]

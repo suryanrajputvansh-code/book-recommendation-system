@@ -41,6 +41,7 @@ class UserResponse(BaseModel):
 
 class AuthResponse(BaseModel):
     user: UserResponse
+    token: Optional[str] = None
 
 
 def set_auth_cookie(response: Response, token: str):
@@ -104,7 +105,10 @@ def signup(payload: SignupRequest, response: Response, db: Session = Depends(get
     token = create_access_token(user.id)
     set_auth_cookie(response, token)
 
-    return {"user": UserResponse(id=user.id, email=user.email, name=user.name, avatar_url=user.avatar_url)}
+    return {
+        "user": UserResponse(id=user.id, email=user.email, name=user.name, avatar_url=user.avatar_url),
+        "token": token
+    }
 
 
 @router.post("/login", response_model=AuthResponse)
@@ -122,13 +126,16 @@ def login(payload: LoginRequest, response: Response, db: Session = Depends(get_d
     if not user or not verify_password(password, user.password_hash):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect email or password."
+            detail="Incorrect email or password. Please verify your credentials and try again."
         )
 
     token = create_access_token(user.id)
     set_auth_cookie(response, token)
 
-    return {"user": UserResponse(id=user.id, email=user.email, name=user.name, avatar_url=user.avatar_url)}
+    return {
+        "user": UserResponse(id=user.id, email=user.email, name=user.name, avatar_url=user.avatar_url),
+        "token": token
+    }
 
 
 @router.post("/google", response_model=AuthResponse)
@@ -190,7 +197,10 @@ def google_auth(payload: GoogleAuthRequest, response: Response, db: Session = De
     token = create_access_token(user.id)
     set_auth_cookie(response, token)
 
-    return {"user": UserResponse(id=user.id, email=user.email, name=user.name, avatar_url=user.avatar_url)}
+    return {
+        "user": UserResponse(id=user.id, email=user.email, name=user.name, avatar_url=user.avatar_url),
+        "token": token
+    }
 
 
 @router.post("/logout")

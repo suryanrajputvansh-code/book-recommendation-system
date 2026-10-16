@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 export default function AuthModal({ onClose, onAuthSuccess }) {
   const { login, signup, googleLogin } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const googleBtnRef = useRef(null);
@@ -75,20 +75,27 @@ export default function AuthModal({ onClose, onAuthSuccess }) {
 
     const email = formData.email.trim();
     const password = formData.password;
-    const name = formData.name.strip ? formData.name.strip() : formData.name.trim();
+    const confirmPassword = formData.confirmPassword;
+    const name = formData.name.trim();
 
     if (!email || !password || (!isLogin && !name)) {
       setError('Please fill in all required fields.');
       return;
     }
 
-    if (!email.includes('@') || !email.includes('.')) {
-      setError('Please enter a valid email address.');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address (e.g., name@example.com).');
       return;
     }
 
     if (password.length < 8) {
       setError('Password must be at least 8 characters long.');
+      return;
+    }
+
+    if (!isLogin && password !== confirmPassword) {
+      setError('Passwords do not match. Please re-enter your password.');
       return;
     }
 
@@ -186,6 +193,24 @@ export default function AuthModal({ onClose, onAuthSuccess }) {
               />
             </div>
           </div>
+
+          {!isLogin && (
+            <div className="space-y-1">
+              <label className="text-[11px] font-bold uppercase tracking-wider text-muted">Confirm Password</label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" />
+                <input
+                  type="password"
+                  required
+                  minLength={8}
+                  value={formData.confirmPassword}
+                  onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                  className="input-paper" style={{ paddingLeft: '2.5rem' }}
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+          )}
 
           <button
             type="submit"
