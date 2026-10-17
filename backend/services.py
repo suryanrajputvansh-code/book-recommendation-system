@@ -34,6 +34,8 @@ class RecommenderService:
         cover = str(book.get("cover_url") or book.get("image_url", ""))
         book["cover_url"] = cover
         book["image_url"] = cover
+        book["read_url"] = str(book.get("read_url", ""))
+        book["link_type"] = str(book.get("link_type", "preview"))
         return book
 
     def get_book_by_id(self, book_id: str) -> Optional[Dict[str, Any]]:

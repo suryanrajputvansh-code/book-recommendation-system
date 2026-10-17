@@ -94,12 +94,26 @@ export default function BookCard({ book, onSelect, onFindSimilar, isRecommendati
               <span>{book.rating ? Number(book.rating).toFixed(2) : '4.0'}</span>
             </div>
 
-            <button
-              onClick={(e) => { e.stopPropagation(); onFindSimilar(book); }}
-              className="text-[10px] font-bold uppercase tracking-widest text-accent hover:text-accent-dark transition-colors flex items-center gap-1"
-            >
-              Similar <Sparkles className="w-3 h-3" />
-            </button>
+            <div className="flex items-center gap-2">
+              {book.read_url && (
+                <a
+                  href={book.read_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-[10px] font-bold uppercase tracking-wider text-ink-700 hover:text-accent transition-colors flex items-center gap-0.5"
+                  title={book.link_type === 'fulltext' ? 'Read Complete Free Book' : 'Read Book / Preview'}
+                >
+                  Read <ArrowUpRight className="w-2.5 h-2.5" />
+                </a>
+              )}
+              <button
+                onClick={(e) => { e.stopPropagation(); onFindSimilar(book); }}
+                className="text-[10px] font-bold uppercase tracking-widest text-accent hover:text-accent-dark transition-colors flex items-center gap-1"
+              >
+                Similar <Sparkles className="w-3 h-3" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

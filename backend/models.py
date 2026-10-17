@@ -15,6 +15,8 @@ class BookBase(BaseModel):
     publication_year: Optional[int] = Field(default=None, description="Year of publication")
     image_url: Optional[str] = Field(default="", description="Cover image URL")
     cover_url: Optional[str] = Field(default="", description="Cover image URL")
+    read_url: Optional[str] = Field(default="", description="Direct link to full text or preview")
+    link_type: Optional[str] = Field(default="preview", description="Type of link: fulltext or preview")
     description: Optional[str] = Field(default="", description="Synopsis or summary")
 
 

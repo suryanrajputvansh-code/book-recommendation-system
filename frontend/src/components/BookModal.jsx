@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Loader2, BookOpen, ArrowRight, Star } from 'lucide-react';
+import { X, Loader2, BookOpen, ArrowRight, Star, ExternalLink } from 'lucide-react';
 import { api } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import BookCard from './BookCard';
@@ -200,10 +200,22 @@ export default function BookModal({ book, onClose, onSelectBook, onOpenStudioWit
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                {book.read_url && (
+                  <a
+                    href={book.read_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-ink-900 text-paper-50 rounded-[4px] text-xs font-bold uppercase tracking-wider hover:bg-accent transition-colors shadow-sm"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    {book.link_type === 'fulltext' ? 'Read Full Book' : 'Read Book / Preview'}
+                    <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                  </a>
+                )}
                 <button
                   onClick={() => { onClose(); onOpenStudioWithBook(book); }}
-                  className="btn-primary"
+                  className="btn-secondary"
                 >
                   Analyze in ML Studio <ArrowRight className="w-4 h-4" />
                 </button>
