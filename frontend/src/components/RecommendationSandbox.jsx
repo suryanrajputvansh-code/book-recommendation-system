@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Sliders, BookOpen, Star, Info, Cpu, CheckCircle2, Loader2 } from 'lucide-react';
+import { Sparkles, Sliders, BookOpen, Star, Cpu, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 import BookCard from './BookCard';
 
@@ -43,19 +43,11 @@ export default function RecommendationSandbox({ initialBook, onSelectBook }) {
             Machine Learning Studio
           </div>
           <h2 className="display-font text-3xl sm:text-4xl text-ink-900 mb-3">
-            Cosine Similarity Engine
+            Intelligent Recommendation Engine
           </h2>
           <p className="text-sm text-ink-600 leading-relaxed">
-            Select a reference volume to generate vector similarity recommendations based on TF-IDF weighted author affinity, genre tags, and narrative embeddings.
+            Select a reference volume to discover books matched by author affinity, genre tags, and thematic style.
           </p>
-        </div>
-
-        <div className="paper-panel p-4 h-fit flex-shrink-0">
-          <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-bold text-ink-900 mb-2">
-            <CheckCircle2 className="w-4 h-4 text-ink-500" /> Precomputed Model
-          </div>
-          <p className="text-xs font-mono text-ink-600 mb-1">Alg: Pairwise Cosine Sim</p>
-          <p className="text-xs font-mono text-ink-600">Space: TF-IDF (1,2) N-Grams</p>
         </div>
       </div>
 
@@ -149,22 +141,6 @@ export default function RecommendationSandbox({ initialBook, onSelectBook }) {
         ) : (
           <p className="text-ink-500 text-center py-10 font-serif italic">No significant vectors aligned.</p>
         )}
-      </div>
-
-      {/* Explainability */}
-      <div className="p-6 md:p-8 paper-panel bg-paper-50 space-y-4">
-        <div className="editorial-label text-ink-900 flex items-center gap-1.5 mb-2">
-          <Info className="w-4 h-4" /> Methodology
-        </div>
-        <p className="text-sm text-ink-700 leading-relaxed max-w-4xl">
-          The engine constructs high-dimensional TF-IDF vectors combining author affinity, genre categorizations, and narrative synopses. The similarity between any reference book <span className="font-mono bg-paper-200 px-1">A</span> and candidate <span className="font-mono bg-paper-200 px-1">B</span> is calculated as:
-        </p>
-        <div className="p-4 bg-ink-50 font-mono text-center text-ink-900 border border-line text-sm sm:text-base my-4">
-          Similarity(A, B) = cos(θ) = (A · B) / (‖A‖ ‖B‖)
-        </div>
-        <p className="text-sm text-ink-700 leading-relaxed max-w-4xl">
-          Scores strictly range from 0.0 to 1.0. The Top-N subset is retrieved via an offline-precomputed similarity matrix, guaranteeing sub-millisecond query execution.
-        </p>
       </div>
     </div>
   );

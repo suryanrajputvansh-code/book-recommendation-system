@@ -93,6 +93,7 @@ export default function App() {
       />
 
       <Hero
+        activeTab={activeTab}
         onSearchSubmit={handleSearchSubmit}
         onSelectBook={setSelectedBook}
         onSelectGenre={handleSelectGenre}

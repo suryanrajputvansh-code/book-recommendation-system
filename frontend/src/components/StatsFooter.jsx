@@ -1,11 +1,11 @@
 import React from 'react';
-import { Database, Cpu, CheckCircle2 } from 'lucide-react';
+import { Database, Cpu } from 'lucide-react';
 
 export default function StatsFooter({ stats, onNavigateTab }) {
   return (
     <footer className="border-t border-ink bg-ink-900 text-paper-400 py-16 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="space-y-4">
             <div 
               className="display-font text-2xl text-paper-50 tracking-tight cursor-pointer"
@@ -14,7 +14,7 @@ export default function StatsFooter({ stats, onNavigateTab }) {
               BookWise
             </div>
             <p className="text-xs text-ink-300 leading-relaxed max-w-xs">
-              An editorial machine learning pipeline leveraging Scikit-Learn TF-IDF vectorization and precomputed Cosine Similarity matrices.
+              A curated literary catalog and recommendation engine connecting readers with classic and contemporary books.
             </p>
           </div>
 
@@ -34,24 +34,11 @@ export default function StatsFooter({ stats, onNavigateTab }) {
           </div>
 
           <div className="space-y-3 text-xs">
-            <h4 className="text-paper-100 font-bold uppercase tracking-widest text-[10px]">Telemetry</h4>
+            <h4 className="text-paper-100 font-bold uppercase tracking-widest text-[10px]">Catalog Overview</h4>
             <div className="space-y-2 text-ink-300 font-mono">
               <p>Status: <span className="text-paper-100">{stats?.status || 'Online'}</span></p>
               <p>Catalog: <span className="text-paper-100">{stats?.total_books || 100}</span> titles</p>
               <p>Genres: <span className="text-paper-100">{stats?.genres_count || 12}</span> listed</p>
-            </div>
-          </div>
-
-          <div className="space-y-3 text-xs">
-            <h4 className="text-paper-100 font-bold uppercase tracking-widest text-[10px]">Performance</h4>
-            <div className="p-4 bg-ink-800 border border-ink-700 space-y-2">
-              <div className="flex items-center gap-1.5 text-paper-50 font-bold tracking-widest uppercase text-[10px]">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                Precomputed Lookups
-              </div>
-              <p className="text-[11px] text-ink-300 font-mono leading-relaxed">
-                Matrix lookups execute in &lt; 2ms without runtime vector re-computation.
-              </p>
             </div>
           </div>
         </div>

@@ -227,7 +227,7 @@ export default function BookModal({ book, onClose, onSelectBook, onOpenStudioWit
           <div className="pt-10 mt-10 border-t border-ink">
             <div className="flex items-end justify-between mb-6">
               <h3 className="display-font text-2xl text-ink-900">Similar Volumes</h3>
-              <span className="editorial-label hidden sm:block">Cosine Similarity Analysis</span>
+              <span className="editorial-label hidden sm:block">Recommended Next</span>
             </div>
 
             {isLoadingRecs ? (
